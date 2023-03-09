@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'db_absensi',
+	'hostname' => '127.0.0.1',
+	'username' => 'shterate_shterate',
+	'password' => 'db_absensi',
+	'database' => 'shterate_db_absensi',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
