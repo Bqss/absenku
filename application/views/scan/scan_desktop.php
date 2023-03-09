@@ -74,7 +74,7 @@
 
 
 </section><!-- /.content -->
-<script type="text/javascript" src="<?php echo base_url() ?>assets/plugins/sweetalert/sweetalert.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/plugins/sweetalert/sweetAlert.min.js"></script>
 <script>
   <?= $this->session->flashdata('messageAlert'); ?>
 </script>
