@@ -1,6 +1,9 @@
 ---
 deployment:
  tasks:
- - export DEPLOYPATH=/home/shterate/public_html/
- - /bin/cp index.html $DEPLOYPATH
- - /bin/cp style.css $DEPLOYPATH
+ - export DEPLOYPATH=/home/shterate/absensi.shteratecabangblitar.org/
+ - /bin/cp -R application $DEPLOYPATH
+ - /bin/cp -R system $DEPLOYPATH
+ - /bin/cp -R assets $DEPLOYPATH
+ - /bin/cp index.php  $DEPLOYPATH
+ - /bin/cp .htaccess  $DEPLOYPATH
