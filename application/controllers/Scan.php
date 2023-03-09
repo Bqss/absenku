@@ -41,7 +41,8 @@ class Scan extends Ci_Controller
     $kegiatan = $this->Kegiatan->getDataAktif();
 
     $data = array(
-      'kegiatan' => $kegiatan, 'user' => $user,
+      'kegiatan' => $kegiatan, 
+      'user' => $user,
       'action' => site_url('scan/input_manual'),
       'users' => $this->ion_auth->user()->row()
     );

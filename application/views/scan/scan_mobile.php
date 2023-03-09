@@ -16,6 +16,7 @@
       <div class='box'>
         <div class='box-header'></div>
         <div class='box-body'>
+          <?php dd($kegiatan) ?>
           <?php
           $attributes = array('id' => 'button');
           echo form_open('scan/cek_id', $attributes); ?>
@@ -27,7 +28,10 @@
           <div>
             <video id="video" width="100%" style="border: 1px solid gray"></video>
           </div>
-          <textarea hidden   name="nis" id="result" readonly></textarea>
+          <select name="jenis_kegiatan" id="">
+            <option value=""></option>
+          </select>
+          <textarea name="nis" id="result" readonly></textarea>
           <span> <input type="submit" id="button" class="btn btn-success btn-md" value="Cek Kehadiran"></span>
           <?php echo form_close(); ?>
         </div>
@@ -38,7 +42,6 @@
 
 <script type="text/javascript" src="<?php echo base_url() ?>assets/plugins/zxing/zxing.min.js"></script>
 <script type="text/javascript">
-
   // mengambil data kamera , yaitu arah kamera ke belakang/ atau depan  
   const getCamName = (cam) => {
     return cam.label.split(",")[1]?.trim();
@@ -57,9 +60,9 @@
         document.getElementById('result').textContent = result.text
         if (result != null) {
           audio.play();
-          $('#button').submit();
+          // $('#button').submit();
         }
-        
+
       }).catch((err) => {
         console.error(err)
         document.getElementById('result').textContent = err
@@ -90,7 +93,7 @@
           const sourceSelectPanel = document.getElementById('sourceSelectPanel')
           sourceSelectPanel.style.display = 'block'
         }
-        
+
 
         // handler ketika ganti kamera 
         sourceSelect.onchange = () => {
