@@ -105,7 +105,7 @@ class Scan extends Ci_Controller
     $result_code = $this->input->post('qrcode');
     $tgl = date('Y-m-d');
     $jam_msk = date('H:i:s');
-    $jam_klr = date('H:i:s');
+    // $jam_klr = date('H:i:s');
     $cek_id = $this->Scan->cek_id($result_code);
     $cek_kehadiran = $this->Scan->cek_kehadiran($result_code, $tgl);
     if (!$cek_id) {
@@ -119,16 +119,17 @@ class Scan extends Ci_Controller
 			$this->Scan->absen_pulang($result_code, $data);
 			$this->session->set_flashdata('messageAlert', $this->messageAlert('success', $result_code.'absen pulang'));
 			redirect($_SERVER['HTTP_REFERER']);
-		} */ elseif ($cek_kehadiran && $cek_kehadiran->jam_masuk != '00:00:00' && $cek_kehadiran->jam_keluar == '00:00:00' && $cek_kehadiran->ket != 'pulang') {
+      // && $cek_kehadiran->jam_masuk != '00:00:00' && $cek_kehadiran->jam_keluar == '00:00:00' && $cek_kehadiran->ket != 'pulang'
+		} */ elseif ($cek_kehadiran ) {
       $this->session->set_flashdata('messageAlert', $this->messageAlert('warning', $result_code . ' sudah absen'));
       redirect($_SERVER['HTTP_REFERER']);
       return false;
     } else {
       $data = array(
-        'no_induk' => $result_code,
+        'nis' => $result_code,
         'tgl' => $tgl,
-        'jam_masuk' => $jam_msk,
-        'jenis_kegiatan' => $jenis_kegiatan,
+        'jam_msk' => $jam_msk,
+        'id_kegiatan' => $jenis_kegiatan,
         'ket' => 'masuk',
         'operator' => $this->ion_auth->user()->row()->id,
       );

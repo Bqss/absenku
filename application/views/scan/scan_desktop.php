@@ -37,7 +37,7 @@
               <div class="form-group">
                 <label for="inputName" class="col-md-3 control-label">Input QR Manual</label>
                 <div class="col-md-5">
-                  <input type="text" class="form-control" name="qrcode" id="qrcode" maxlength="8">
+                  <input type="text" class="form-control" name="qrcode" id="qrcode" maxlength="9">
                 </div>
                 <div class="col-md-4">
                   <button type="submit" class="btn btn-primary">Submit</button>

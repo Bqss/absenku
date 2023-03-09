@@ -27,7 +27,7 @@
           <div>
             <video id="video" width="100%" style="border: 1px solid gray"></video>
           </div>
-          <textarea hidden="" name="id_karyawan" id="result" readonly></textarea>
+          <textarea hidden   name="nis" id="result" readonly></textarea>
           <span> <input type="submit" id="button" class="btn btn-success btn-md" value="Cek Kehadiran"></span>
           <?php echo form_close(); ?>
         </div>
@@ -58,9 +58,6 @@
         if (result != null) {
           audio.play();
           $('#button').submit();
-
-
-          // lanjutan kode ketika berhasil membaca QR
         }
         
       }).catch((err) => {
