@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '127.0.0.1',
+	'hostname' => 'localhost',
 	'username' => 'shterate_shterate',
 	'password' => 'db_absensi',
 	'database' => 'shterate_db_absensi',
