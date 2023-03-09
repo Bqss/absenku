@@ -7,3 +7,5 @@ deployment:
  - /bin/cp -R assets $DEPLOYPATH
  - /bin/cp index.php  $DEPLOYPATH
  - /bin/cp .htaccess  $DEPLOYPATH
+ - /bin/cp .composer.json  $DEPLOYPATH
+ - /bin/cp .composer.lock  $DEPLOYPATH
