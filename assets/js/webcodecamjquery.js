@@ -66,22 +66,22 @@
             threshold: 0,
             sharpness: [],
             resultFunction: function(res) {
-                console.log(res.format + ": " + res.code);
+                // console.log(res.format + ": " + res.code);
             },
             cameraSuccess: function(stream) {
-                console.log('cameraSuccess');
+                // console.log('cameraSuccess');
             },
             canPlayFunction: function() {
-                console.log('canPlayFunction');
+                // console.log('canPlayFunction');
             },
             getDevicesError: function(error) {
-                console.log(error);
+                // console.log(error);
             },
             getUserMediaError: function(error) {
-                console.log(error);
+                // console.log(error);
             },
             cameraError: function(error) {
-                console.log(error);
+                // console.log(error);
             }
         };
 

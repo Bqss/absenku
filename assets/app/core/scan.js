@@ -39,7 +39,6 @@ $.extend(
         
         var form = '';
         $.each( args, function( key, value) {
-            console.log(value)
             form += '<input type="hidden" name="'+key+'" value="'+value+'">';
         });
         // console.log(args);
