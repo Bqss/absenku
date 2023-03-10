@@ -28,8 +28,7 @@
                 <select id="jenis_kegiatan" name="jenis_kegiatan" class="form-control select2" style="width: 100%!important" required>
                   <div class="form-group">
                     <?php
-                    $kegiatan = $this->db->get('kegiatan');
-                    foreach ($kegiatan->result() as $k) : ?>
+                    foreach ($kegiatan as $k) : ?>
                       <option value="<?= $k->id_kegiatan ?>"><?= strtoupper($k->kegiatan) ?></option>
                     <?php endforeach; ?>
                 </select>

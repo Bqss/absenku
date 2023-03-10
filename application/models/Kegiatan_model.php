@@ -54,7 +54,7 @@ class Kegiatan_model extends CI_Model
     {
         $sql = "SELECT *
         from kegiatan WHERE aktif=1";
-        return $this->db->query($sql)->row();
+        return $this->db->query($sql)->result();
     }
   
 

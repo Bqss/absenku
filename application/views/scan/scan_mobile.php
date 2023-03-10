@@ -16,9 +16,7 @@
       <div class='box'>
         <div class='box-header'></div>
         <div class='box-body'>
-          <?php dd($kegiatan) ?>
-          <?php
-          $attributes = array('id' => 'button');
+          <?php $attributes = array('id' => 'button');
           echo form_open('scan/cek_id', $attributes); ?>
           <div id="sourceSelectPanel" style="display:'none';">
             <label for="sourceSelect">Change video source:</label>
@@ -26,12 +24,18 @@
             </select>
           </div>
           <div>
+            <label for="jenis_kegiatan">Nama kegiatan : </label>
+            <select name="jenis_kegiatan" id="jenis_kegiatan">
+              <?php foreach ($kegiatan as $k) : ?>
+                <option value="<?= $k->id_kegiatan ?>"><?= strtoupper($k->kegiatan) ?></option>
+              <?php endforeach;  ?>
+            </select>
+          </div>
+          <div>
             <video id="video" width="100%" style="border: 1px solid gray"></video>
           </div>
-          <select name="jenis_kegiatan" id="">
-            <option value=""></option>
-          </select>
-          <textarea name="nis" id="result" readonly></textarea>
+
+          <textarea name="nis" hidden id="result" readonly></textarea>
           <span> <input type="submit" id="button" class="btn btn-success btn-md" value="Cek Kehadiran"></span>
           <?php echo form_close(); ?>
         </div>
