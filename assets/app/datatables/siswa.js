@@ -5,14 +5,14 @@ $(document).ready(function () {
         initComplete: function () {
             let api = this.api();
             $('#siswa_filter input')
-                .off('.DT')
+                .off('.DT') 
                 .on('keyup.DT', function (e) {
-                    api.search(this.value).draw();
+                    api.search(this.value).draw();  
                 });
         },
         responsive: true,
         processing: true,
-        serverSide: true,
+        // serverSide: true,
         colReorder: true,
         oLanguage: {
             sProcessing: "loading..."
@@ -25,11 +25,12 @@ $(document).ready(function () {
         ajax: {
             "url": base_url + "siswa/data",
             "type": "POST",
+            dataSrc :""
         },
         columns:
             [
-                { 'data': 'id_siswa', defaultContent: '' },
-                { 'data': "no_induk" },
+                { 'data': null , defaultContent: '' },
+                { 'data': "nis" },
                 { "data": "ranting" },
                 { "data": "rayon" },
                 { "data": "nama" },
@@ -41,20 +42,19 @@ $(document).ready(function () {
             {
                 "data": {
                     "id_siswa": "id_siswa",
-                
                 },
                 "targets": 7,
                 "orderable": false,
                 "searchable": false,
                 "render": function (data, type, row, meta) {
                     let btn;
-                    if (checkLogin == 1) {
+                    if (checkLogin == 0) {
                         return `<a href="${base_url}siswa/lihat/${data.id_siswa}" title="lihat" class="btn btn-md btn-success btn3d btn-view-data">
                         <i class="fa fa-eye"></i> Lihat
                         </a>`;
                     }
                     else {
-                        return `<a href="${base_url}siswa/lihat/${data.id_siswa}" title="edit" class="btn btn-md btn-success btn3d btn-view-data">
+                        return `<a href="${base_url}siswa//${data.id_siswa}" title="edit" class="btn btn-md btn-success btn3d btn-view-data">
                         <i class="fa fa-eye"></i> Lihat
                         </a>`;
                     }
@@ -121,11 +121,10 @@ $(document).ready(function () {
         rowId: function (a) {
             return a;
         },
-        rowCallback: function (row, data, iDisplayIndex) {
-            var info = this.fnPagingInfo();
-            var page = info.iPage;
-            var length = info.iLength;
-        },
+            rowCallback: function(row, data, index) {
+                var row_number = index + 1;
+                $('td:eq(0)', row).html(row_number);
+            },
     });
     table.on('order.dt search.dt', function () {
         table.column(0, { search: 'applied', order: 'applied' }).nodes().each(function (cell, i) {

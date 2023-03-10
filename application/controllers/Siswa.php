@@ -68,8 +68,7 @@ class Siswa extends CI_Controller
 
     public function data()
     {
-
-        $this->output_json($this->Siswa_model->getData(), false);
+        $this->output_json($this->Siswa_model->getData(), true);
     }
 
     public function rd($id)
@@ -113,7 +112,7 @@ class Siswa extends CI_Controller
         $data = array(
             'box' => 'info',
             'button' => 'Create',
-            'action' => site_url('karyawan/create_action'),
+            'action' => site_url('siswa/create_action'),
             'id_karyawan' => set_value('id_karyawan'),
             'nama_karyawan' => set_value('nama_karyawan'),
             'jabatan' => set_value('jabatan'),
@@ -123,33 +122,42 @@ class Siswa extends CI_Controller
             'user' => $user, 'users'     => $this->ion_auth->user()->row(),
             'result' => $hasil,
         );
-        $this->template->load('template/template', 'karyawan/karyawan_form', $data);
+        $this->template->load('template/template', 'siswa/siswa_form_create', $data);
     }
     public function create_action()
     {
-        $this->_rules();
-        if ($this->form_validation->run() == FALSE) {
-            $this->create();
-        } else {
-            $kode = $this->Jabatan_model->get_by_id($this->input->post('jabatan'));
-            $kodejbt = $kode->nama_jabatan;
-            $kodeagt = substr($kodejbt, 0, 1);
-            $tgl = date('ym');
-            $var = $this->Siswa_model->get_max();
-            $getvar = $var[0]->kode;
-            $nilai = $this->formatNbr($var[0]->kode);
-            $nourut = $kodeagt . $tgl . $nilai;
+        // $this->_rules();
+        // if ($this->form_validation->run() == FALSE) {
+        //     $this->create();
+        // } else {
+
+            
+            // $kode = $this->Jabatan_model->get_by_id($this->input->post('jabatan'));
+            // $kodejbt = $kode->nama_jabatan;
+            // $kodeagt = substr($kodejbt, 0, 1);
+            // $tgl = date('ym');
+            // $var = $this->Siswa_model->get_max();
+            // $getvar = $var[0]->kode;
+            // $nilai = $this->formatNbr($var[0]->kode);
+            // $nourut = $kodeagt . $tgl . $nilai;
             $data = array(
-                'nama_karyawan' => ucwords($this->input->post('nama_karyawan', TRUE)),
-                'id_karyawan' => $nourut,
-                'jabatan' => $this->input->post('jabatan', TRUE),
-                'id_shift' => $this->input->post('id_shift', TRUE),
-                'gedung_id' => $this->input->post('gedung_id', TRUE),
+                'nis' => $this->input->post('nis'),
+                'nama' => $this->input->post('nama'),
+                'ranting' => $this->input->post('ranting'),
+                'rayon' => $this->input->post('rayon'),
+                'jk' => $this->input->post('jenis_kelamin'),
+                'agama' => $this->input->post('agama'),
+                'alamat' => $this->input->post('alamat'),
+                'tempat_lahir' => $this->input->post('tempat_lahir'),
+                'tgl_lahir' => $this->input->post('tanggal_lahir'),
+                'pasaran' => $this->input->post('pasaran'),
+
             );
+            // dd($data);
             $this->Siswa_model->insert($data);
-            $this->session->set_flashdata('messageAlert', $this->messageAlert('success', 'Berhasil menambahkan karyawan'));
-            redirect(site_url('karyawan'));
-        }
+            $this->session->set_flashdata('messageAlert', $this->messageAlert('success', 'Berhasil menambahkan siswa'));
+            redirect(site_url('siswa'));
+        // }
     }
 
     public function search()
