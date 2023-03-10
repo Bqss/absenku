@@ -53,14 +53,13 @@
                         <thead>
                             <tr>
                                 <th class="all">No</th>
+                                <th class="all">Nis</th>
                                 <th class="all">Nama</th>
                                 <th class="all">Tanggal</th>
-                                <th class="desktop">Jam Masuk</th>
-                                <th class="desktop">Jam Keluar</th>
+                                <th class="desktop">ranting</th>
+                                <th class="desktop">rayon</th>
                                 <th class="desktop">Kehadiran</th>
-                                <th class="desktop">Keterangan</th>
-                                <th class="desktop">status </th>
-                                <th class="desktop">Action</th>
+                                <th class="desktop">tempat latihan</th>
                             </tr>
                         </thead>
                         <tbody>
