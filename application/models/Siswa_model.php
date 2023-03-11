@@ -76,14 +76,16 @@ class Siswa_model extends CI_Model
     // update data
     function update($id, $data)
     {
-        $this->db->where($this->id, $id);
-        $this->db->update($this->table, $data);
+      // dd($id);
+      $this->db->where('nis', $id);
+      $this->db->update($this->table, $data);
+        // $this->db->update($this->table, $data, "nis=$id");
     }
 
     // delete data
     function delete($id)
     {
-        $this->db->where($this->id, $id);
+        $this->db->where('nis', $id);
         $this->db->delete($this->table);
     }
 }

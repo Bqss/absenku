@@ -41,7 +41,7 @@
             </li>
             <li>
                 <a href="<?php echo base_url('presensi') ?>">
-                    <i class="fa fa-paperclip"></i> <span>REKAP ABENSI</span>
+                    <i class="fa fa-paperclip"></i> <span>REKAP ABSENSI</span>
                 </a>
             </li>
             <li>
