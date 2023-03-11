@@ -6,7 +6,7 @@ if (!defined('BASEPATH'))
 class Presensi_model extends CI_Model
 {
 
-  public $table = 'presensi';
+  public $table = 'presensi_siswa';
   public $id = 'id_absen';
   public $order = 'DESC';
 
@@ -77,6 +77,7 @@ class Presensi_model extends CI_Model
   // delete data
   function delete($id)
   {
+
     $this->db->where($this->id, $id);
     $this->db->delete($this->table);
   }

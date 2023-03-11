@@ -233,10 +233,12 @@ class Presensi extends CI_Controller
 
     public function delete($id)
     {
+     
         if (!$this->ion_auth->is_admin()) {
             show_error('Hanya Administrator yang diberi hak untuk mengakses halaman ini, <a href="' . base_url('dashboard') . '">Kembali ke menu awal</a>', 403, 'Akses Terlarang');
         }
         $row = $this->Presensi_model->get_by_id($id);
+
         if ($row) {
             $this->Presensi_model->delete($id);
             $this->session->set_flashdata('message', 'Delete Record Success');
