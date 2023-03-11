@@ -87,6 +87,7 @@
             const sourceOption = document.createElement('option')
 
             // validasi kamera belakang atau depan , default kamera kedua 
+            console.log(getCamName(element))
             if (getCamName(element) == "facing back" || i == 1) {
               selectedDeviceId = element.deviceId;
               // setting dropdown agar sesuai dengan kondisi kamera yang saat ini terpilih 
