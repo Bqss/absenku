@@ -51,7 +51,7 @@
 <script type="text/javascript">
   // mengambil data kamera , yaitu arah kamera ke belakang/ atau depan  
   const getCamName = (cam) => {
-    return cam.label.split(",")[1]?.trim();
+    return cam.label.split(",")[0];
   }
   window.addEventListener('load', function() {
     let selectedDeviceId;
@@ -87,7 +87,7 @@
             const sourceOption = document.createElement('option')
 
             // validasi kamera belakang atau depan , default kamera kedua 
-            if (getCamName(element) == "facing back" || i == 1) {
+            if (getCamName(element) == "camera 0" || i == 1) {
               selectedDeviceId = element.deviceId;
               // setting dropdown agar sesuai dengan kondisi kamera yang saat ini terpilih 
               sourceOption.selected = true;
