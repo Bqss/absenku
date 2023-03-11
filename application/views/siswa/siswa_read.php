@@ -17,8 +17,8 @@
                             <td><?php echo $nama; ?></td>
                         </tr>
                         <tr>
-                            <td>No ID</td>
-                            <td><?php echo $no_induk; ?></td>
+                            <td>NIS</td>
+                            <td><?php echo $nis; ?></td>
                         </tr>
                         
                         <tr>
@@ -35,7 +35,7 @@
                         </tr>
                         <tr>
                             <td>TTL</td>
-                            <td><?php echo $tempat_lahir; ?></td>
+                            <td><?php echo ("$tempat_lahir., $tgl_lahir")  ?></td>
                         </tr>
                         <tr>
                             <td>Neton</td>
@@ -49,10 +49,7 @@
                             <td>Alamat</td>
                             <td><?php echo $alamat; ?></td>
                         </tr>
-                        <tr>
-                            <td>Kelas</td>
-                            <td><?php echo $kelas; ?></td>
-                        </tr>
+
                         <tr>
                             <td colspan="2" style="text-align:center;"><a href="<?php echo site_url('siswa') ?>" class="btn-xs btn btn-primary">Kembali</a></td>
                         </tr>

@@ -61,8 +61,9 @@ $route['karyawan/lihat/(:num)'] = 'karyawan/rd/$1';
 //siswa
 $route['tambah_siswa'] = 'siswa/create';
 $route['siswa/detail/(:num)'] = 'siswa/rd/$1';
-
 $route['cari_siswa'] = 'siswa/search';
+
+
 $route['tambah_jabatan'] = 'jabatan/create';
 $route['tambah_shift'] = 'shift/create';
 $route['tambah_shift'] = 'shift/create';

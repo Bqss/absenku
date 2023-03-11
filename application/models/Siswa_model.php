@@ -39,17 +39,14 @@ class Siswa_model extends CI_Model
 
     function get_by_id_query($id)
     {
-        $sql = "SELECT *
-        from siswa 
-        where id_siswa=$id";
+        $sql = "SELECT * from siswa 
+        where nis=$id";
         return $this->db->query($sql)->row($id);
     }
 
     function get_by_no_induk($id)
     {
-        $sql = "SELECT *
-        from siswa 
-        where no_induk=$id";
+        $sql = "SELECT * from siswa where nis=$id ";
         return $this->db->query($sql)->row($id);
     }
 

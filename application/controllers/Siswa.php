@@ -17,7 +17,6 @@ class Siswa extends CI_Controller
         $this->load->library('user_agent');
         $this->load->model(array('Siswa_model'));
         $this->load->library('form_validation', 'ion_auth');
-        $this->load->helper('url');
         $this->user = $this->ion_auth->user()->row();
     }
 
@@ -73,25 +72,24 @@ class Siswa extends CI_Controller
 
     public function rd($id)
     {
-        dd($id);
-        $user = $this->user;
-        $row = $this->Siswa_model->get_by_id_query($this->uri->segment(3));
+        // dd($id);
+        $user = $this -> user;
+        $row = $this->Siswa_model->get_by_id_query($id);
         if ($row) {
             $uri = $this->uri->segment(3);
             $data = array(
-                'id_siswa' => $row->id_siswa,
-                'no_induk' => $row->no_induk,
+                'nis' => $row->nis,
                 'nama' => $row->nama,
                 'ranting' => $row->ranting,
                 'rayon' => $row->rayon,
                 'agama' => $row->agama,
                 'alamat' => $row->alamat,
-                'kelas' => $row->kelas,
                 'jk' => $row->jk,
                 'tempat_lahir' => $row->tempat_lahir,
                 'pasaran' => $row->pasaran,
                 'tgl_lahir' => $row->tgl_lahir,
-                'user' => $user, 'users'     => $this->ion_auth->user()->row(),
+                'user' => $user, 
+                'users'  => $this->ion_auth->user()->row(),
             );
             $this->template->load('template/template', 'siswa/siswa_read', $data, $uri);
         } else {
@@ -164,7 +162,7 @@ class Siswa extends CI_Controller
     public function search()
     {
         $chek = $this->ion_auth->is_admin();
-            $hasil = 1;
+        $hasil = $chek ? 1 : 0;
         $user = $this->user;
         $data = array(
             'box' => 'info',
@@ -178,26 +176,25 @@ class Siswa extends CI_Controller
     public function search_action()
     {
         $user = $this->user;
-        $noinduk = $this->input->post('no_induk',TRUE);
-        $row = $this->Siswa_model->get_by_no_induk($noinduk);
+        $nis = $this->input->post('nis',TRUE);
+        $row = $this->Siswa_model->get_by_no_induk($nis);
         if ($row) {
-            $uri = $noinduk;
+            // $uri = $noinduk;
             $data = array(
-                'id_siswa' => $row->id_siswa,
-                'no_induk' => $row->no_induk,
+                'nis' => $row->nis,
                 'nama' => $row->nama,
                 'ranting' => $row->ranting,
                 'rayon' => $row->rayon,
                 'agama' => $row->agama,
                 'alamat' => $row->alamat,
-                'kelas' => $row->kelas,
+                // 'kelas' => $row->kelas,
                 'jk' => $row->jk,
                 'tempat_lahir' => $row->tempat_lahir,
                 'pasaran' => $row->pasaran,
                 'tgl_lahir' => $row->tgl_lahir,
                 'user' => $user, 'users'     => $this->ion_auth->user()->row(),
             );
-            $this->template->load('template/template', 'siswa/read', $data, $uri);
+            $this->template->load('template/template', 'siswa/read', $data);
         } else {
             $this->session->set_flashdata('messageAlert', $this->messageAlert('error', 'Data tidak ditemukan!'));
             redirect(site_url('siswa'));
