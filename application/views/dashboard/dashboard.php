@@ -64,7 +64,7 @@
                 <div class="icon">
                     <i class="fa fa-<?= $info->icon ?>"></i>
                 </div>
-                <a href="<?= base_url() . strtolower($info->title); ?>" class="small-box-footer">
+                <a href="<?= base_url() . strtolower($info->redirect); ?>" class="small-box-footer">
                     More info <i class="fa fa-arrow-circle-right"></i>
                 </a>
             </div>

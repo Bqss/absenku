@@ -12,6 +12,7 @@ class Presensi extends CI_Controller
             redirect('auth');
         }
         $this->load->model('Presensi_model');
+        $this->load->model('Kegiatan_model');
         $this->load->model('Gedung_model');
         $this->load->library('form_validation');
         $this->user = $this->ion_auth->user()->row();
@@ -24,17 +25,20 @@ class Presensi extends CI_Controller
         $this->output->set_content_type('application/json')->set_output($data);
     }
 
-    public function data()
+    public function data($id_kegiatan)
     {
-        $this->output_json($this->Presensi_model->get_all_q($this->uri->segment(3)), false);
+        $this->output_json($this->Presensi_model->getByKegiatan($id_kegiatan), true);
     }
 
     public function index()
     {
         $user = $this->user;
-        $gedung = $this->Gedung_model->get_all();
+        // $gedung = $this->Gedung_model->get_all();
+        $kegiatan = $this-> Kegiatan_model->get_all();
+       
+        
         $data = array(
-            'gedung_data' => $gedung,
+            'data_kegiatan' => $kegiatan,
             'user' => $user, 'users'     => $this->ion_auth->user()->row(),
         );
         $this->template->load('template/template', 'presensi/presensi_v', $data);
@@ -68,10 +72,13 @@ class Presensi extends CI_Controller
             $hasil = 1;
         }
         $user = $this->user;
-        $presensi = $this->Presensi_model->get_all_query($id);
+        $presensi = $this->Presensi_model->getByKegiatan($id);  
+        $kegiatan = $this -> Kegiatan_model -> get_by_id($id);
+        // dd($presensi);
         $data = array(
             'presensi_data' => $presensi,
             'user' => $user,
+            'kegiatan' => $kegiatan,
             'users'     => $this->ion_auth->user()->row(),
             'result' => $hasil,
         );

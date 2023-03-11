@@ -48,7 +48,7 @@ $(document).ready(function () {
                 "searchable": false,
                 "render": function (data, type, row, meta) {
                     let btn;
-                    if (checkLogin == 1) {
+                    if (checkLogin == 0) {
                         return `<a href="${base_url}siswa/detail/${data.nis}" title="lihat" class="btn btn-md btn-success btn3d btn-view-data">
                         <i class="fa fa-eye"></i> Lihat
                         </a>`;

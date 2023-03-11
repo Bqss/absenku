@@ -53,6 +53,11 @@ class Dashboard_model extends Ci_Model{
                 ORDER BY total_kehadiran desc, a.id_karyawan";
     }
 
+
+      function getLocationTotal () {
+         return count($this->db->query("select id_kegiatan, kegiatan from kegiatan group by lokasi ")->result());
+      }
+
       function get_max($id){
           $gi = $this->group_by_gi($id);
           $select = array('a.nama_gedung,count(b.id_karyawan) as total_karyawan');
