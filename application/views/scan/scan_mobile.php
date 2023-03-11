@@ -87,7 +87,7 @@
             const sourceOption = document.createElement('option')
 
             // validasi kamera belakang atau depan , default kamera kedua 
-            if (getCamName(element) == "camera 0" || i == 1) {
+            if (getCamName(element) == "camera 0" ) {
               selectedDeviceId = element.deviceId;
               // setting dropdown agar sesuai dengan kondisi kamera yang saat ini terpilih 
               sourceOption.selected = true;
