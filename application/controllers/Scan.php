@@ -62,7 +62,7 @@ class Scan extends Ci_Controller
     $user = $this->user;
     $jenis_kegiatan = $this->input->post('jenis_kegiatan');
     $result_code = $this->input->post('no_induk');
-    dd($result_code);
+    // dd($result_code);
     $tgl = date('Y-m-d');
     $jam_msk = date('H:i:s');
     $jam_klr = date('H:i:s');
