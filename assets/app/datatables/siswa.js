@@ -48,13 +48,13 @@ $(document).ready(function () {
                 "searchable": false,
                 "render": function (data, type, row, meta) {
                     let btn;
-                    if (checkLogin == 0) {
-                        return `<a href="${base_url}siswa/lihat/${data.id_siswa}" title="lihat" class="btn btn-md btn-success btn3d btn-view-data">
+                    if (checkLogin == 1) {
+                        return `<a href="${base_url}siswa/detail/${data.nis}" title="lihat" class="btn btn-md btn-success btn3d btn-view-data">
                         <i class="fa fa-eye"></i> Lihat
                         </a>`;
                     }
                     else {
-                        return `<a href="${base_url}siswa//${data.id_siswa}" title="edit" class="btn btn-md btn-success btn3d btn-view-data">
+                        return `<a href="${base_url}siswa//${data.nis}" title="edit" class="btn btn-md btn-success btn3d btn-view-data">
                         <i class="fa fa-eye"></i> Lihat
                         </a>`;
                     }

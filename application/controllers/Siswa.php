@@ -73,6 +73,7 @@ class Siswa extends CI_Controller
 
     public function rd($id)
     {
+        dd($id);
         $user = $this->user;
         $row = $this->Siswa_model->get_by_id_query($this->uri->segment(3));
         if ($row) {

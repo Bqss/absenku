@@ -60,6 +60,8 @@ $route['tambah_anggota'] = 'karyawan/create';
 $route['karyawan/lihat/(:num)'] = 'karyawan/rd/$1';
 //siswa
 $route['tambah_siswa'] = 'siswa/create';
+$route['siswa/detail/(:num)'] = 'siswa/rd/$1';
+
 $route['cari_siswa'] = 'siswa/search';
 $route['tambah_jabatan'] = 'jabatan/create';
 $route['tambah_shift'] = 'shift/create';
@@ -69,7 +71,7 @@ $route['tambah_lokasi'] = 'lokasi/create';
 $route['tambah_menu'] = 'menu/create';
 $route['tambah_grup'] = 'groups/create';
 $route['tambah_user'] = 'auth/create_user';
-$route['siswa/lihat/(:num)'] = 'siswa/rd/$1';
+
 $route['jabatan/lihat/(:num)'] = 'jabatan/rd/$1';
 $route['shift/lihat/(:num)'] = 'shift/rd/$1';
 $route['lokasi/lihat/(:num)'] = 'lokasi/rd/$1';
