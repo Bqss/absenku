@@ -5,7 +5,6 @@ class Scan_model extends Ci_Model
     public function cek_id($no_induk)
     {
         $query_str =$this->db->query("select * from siswa where nis=$no_induk")->result();
-        dd($query_str);
         if (count($query_str) > 0) {
             return $query_str->row();
         } else {
