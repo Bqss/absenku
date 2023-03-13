@@ -27,10 +27,7 @@
               <div class="col-md-7">
                 <select id="jenis_kegiatan" name="jenis_kegiatan" class="form-control select2" style="width: 100%!important" required>
                   <div class="form-group">
-                    <?php
-                    foreach ($kegiatan as $k) : ?>
-                      <option value="<?= $k->id_kegiatan ?>"><?= strtoupper($k->kegiatan) ?></option>
-                    <?php endforeach; ?>
+                  <?= cmb_dinamis_ec("jenis_kegiatan","jenis_kegiatan",$kegiatan,'kegiatan','id_kegiatan',$prev_kegiatan) ?>
                 </select>
               </div>
               <div class="form-group">
