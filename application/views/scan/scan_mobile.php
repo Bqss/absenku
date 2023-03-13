@@ -25,11 +25,7 @@
           </div>
           <div>
             <label for="jenis_kegiatan">Nama kegiatan : </label>
-            <select name="jenis_kegiatan" id="jenis_kegiatan">
-              <?php foreach ($kegiatan as $k) : ?>
-                <option value="<?= $k->id_kegiatan ?>"><?= strtoupper($k->kegiatan) ?></option>
-              <?php endforeach;  ?>
-            </select>
+            <?= cmb_dinamis_ec("jenis_kegiatan","jenis_kegiatan",$kegiatan,'kegiatan','id_kegiatan',$prev_kegiatan) ?>
           </div>
           <div>
             <video id="video" width="100%" style="border: 1px solid gray"></video>
@@ -71,7 +67,7 @@
         }
 
       }).catch((err) => {
-        console.error(err)
+ 
         document.getElementById('result').textContent = err
       })
     }
@@ -107,11 +103,11 @@
         sourceSelect.onchange = () => {
           selectedDeviceId = sourceSelect.value;
           decode();
-          console.log(`Started continous decode from camera with id ${selectedDeviceId}`)
+
         }
       })
       .catch((err) => {
-        console.error(err)
+  
       })
   })
 </script>

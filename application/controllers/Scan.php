@@ -39,12 +39,14 @@ class Scan extends Ci_Controller
   {
     $user = $this->user;
     $kegiatan = $this->Kegiatan->getDataAktif();
+    // dd( $this->session->userdata("prev_kegiatan"));
 
     $data = array(
       'kegiatan' => $kegiatan, 
       'user' => $user,
       'action' => site_url('scan/input_manual'),
-      'users' => $this->ion_auth->user()->row()
+      'users' => $this->ion_auth->user()->row(),
+      "prev_kegiatan" => $this->session->userdata("prev_kegiatan"),
     );
     if ($this->agent->is_mobile('iphone')) {
       $this->template->load('scan/template_sc', 'scan/scan_mobile', $data);
@@ -62,12 +64,12 @@ class Scan extends Ci_Controller
     $user = $this->user;
     $jenis_kegiatan = $this->input->post('jenis_kegiatan');
     $result_code = $this->input->post('no_induk');
-    // dd($result_code);
     $tgl = date('Y-m-d');
     $jam_msk = date('H:i:s');
     $jam_klr = date('H:i:s');
     $cek_id = $this->Scan->cek_id($result_code);
     $cek_kehadiran = $this->Scan->cek_kehadiran($result_code, $tgl);
+    $this->session->set_userdata("prev_kegiatan",$jenis_kegiatan);
     if (!$cek_id) {
       $this->session->set_flashdata('messageAlert', $this->messageAlert('error', 'absen gagal data QR tidak ditemukan'));
       redirect($_SERVER['HTTP_REFERER']);

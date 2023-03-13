@@ -54,7 +54,10 @@ $(document).ready(function () {
                         <i class="fa fa-eye"></i> Lihat
                         </a>`;
             } else {
-              return `
+              return `  
+                        <a href="${base_url}siswa/detail/${data.nis}" title="lihat" class="btn btn-md btn-success btn3d btn-view-data">
+                            <i class="fa fa-eye"></i> Lihat
+                        </a>
                         <a href="${base_url}siswa/update/${data.nis}" title="edit" class="btn btn-md btn-primary btn3d btn-view-data">
                             <i class="fa fa-pen"></i> Edit
                         </a>
