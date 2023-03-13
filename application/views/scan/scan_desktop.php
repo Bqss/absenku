@@ -25,9 +25,8 @@
             <form method="post" action="<?php echo $action; ?>">
               <label for="inputName" class="col-md-3 control-label">Kegiatan</label>
               <div class="col-md-7">
-                <select id="jenis_kegiatan" name="jenis_kegiatan" class="form-control select2" style="width: 100%!important" required>
                   <div class="form-group">
-                    <?= cmb_dinamis_ec("jenis_kegiatan","jenis_kegiatan",$kegiatan,'kegiatan','id_kegiatan',$prev_kegiatan) ?>
+                    <?= cmb_dinamis_ec2("jenis_kegiatan","jenis_kegiatan",$kegiatan,'kegiatan','id_kegiatan',$prev_kegiatan) ?>
                   </div>
                 </select>
               </div>

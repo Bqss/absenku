@@ -25,6 +25,18 @@ function cmb_dinamis_ec($name, $id, $data, $field, $pk, $selected)
   $cmb .= "</select>";
   return $cmb;
 }
+function cmb_dinamis_ec2($name, $id, $data, $field, $pk, $selected)
+{
+
+  $cmb = "<select name='$name' class='form-control' id='$id'>";
+  foreach ($data as $d) {
+    $cmb .= "<option value='" . $d->$pk . "'";
+    $cmb .= $selected == $d->$pk ? " selected='selected'" : '';
+    $cmb .= ">" .  strtoupper($d->$field) . "</option>";
+  }
+  $cmb .= "</select>";
+  return $cmb;
+}
 
 function cmb_dinamis2($name, $id, $table, $field, $pk, $selected)
 {
