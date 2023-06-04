@@ -90,7 +90,7 @@
         </div>
 
 
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
             <div class="box box-danger">
                 <div class="box-header with-border">
                     <h3 class="box-title">Total Peserta Berdasarkan Kategori</h3>
@@ -105,8 +105,7 @@
                     <div id="legend2" class="donut-legend"></div><br>
                 </div>
             </div>
-            <!-- /.box-body -->
-        </div>
+        </div> -->
         <!-- /.box -->
     </div>
     <div>

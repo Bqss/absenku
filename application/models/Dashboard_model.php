@@ -60,24 +60,24 @@ class Dashboard_model extends Ci_Model{
 
       function get_max($id){
           $gi = $this->group_by_gi($id);
-          $select = array('a.nama_gedung,count(b.id_karyawan) as total_karyawan');
+          $select = array('a.nama_gedung,count(b.id_kegiatan) as total_siswa');
           $this->db->select($select);
-          $this->db->from('karyawan as b , gedung as a');
-          $this->db->where('b.gedung_id=a.gedung_id');
-          $this->db->group_by('b.gedung_id');
-          $this->db->order_by('total_karyawan desc, b.id_karyawan');
+          $this->db->from('presensi_siswa as b , gedung as a');
+          $this->db->where('b.id_kegiatan=a.gedung_id');
+          $this->db->group_by('b.id_kegiatan');
+          $this->db->order_by('total_siswa desc, b.id_kegiatan');
           return $this->db->get();
       }
 
-    function get_max2($in){
-            $select = array('a.nama_jabatan,count(b.id_karyawan) as total_karyawan');
-            $this->db->select($select);
-            $this->db->from('karyawan as b , jabatan as a');
-            $this->db->where('b.jabatan=a.id_jabatan');
-            $this->db->group_by('b.jabatan');
-            $this->db->order_by('total_karyawan desc, b.id_karyawan');
-            return $this->db->get();
-    }
+    // function get_max2($in){
+    //         $select = array('a.nama_jabatan,count(b.id_karyawan) as total_karyawan');
+    //         $this->db->select($select);
+    //         $this->db->from('karyawan as b , jabatan as a');
+    //         $this->db->where('b.jabatan=a.id_jabatan');
+    //         $this->db->group_by('b.jabatan');
+    //         $this->db->order_by('total_karyawan desc, b.id_karyawan');
+    //         return $this->db->get();
+    // }
 
         function group_by_gi($id){
           $this->db->select('gedung_id');

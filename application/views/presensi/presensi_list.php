@@ -53,7 +53,6 @@
                         <thead>
                             <tr>
                                 <th class="all">No</th>
-                                <th class="all">Nis</th>
                                 <th class="all">Nama</th>
                                 <th class="all">NIS</th>
                                 <th class="all">Ranting</th>
