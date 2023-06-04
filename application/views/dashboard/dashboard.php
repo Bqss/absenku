@@ -142,7 +142,6 @@
                         $('#legend').append(legendItem)
                     });
 
-<<<<<<< HEAD
                 var color_array2 = ['#03658C', '#7CA69E', '#F2594A', '#F28C4B', '#7E6F6A', '#36AFB2', '#9c6db2', '#d24a67', '#89a958', '#00739a', '#BDBDBD'];
                 var donut = new Morris.Donut({
                     element: 'donut-chart2',
@@ -171,33 +170,6 @@
                         .css('display', 'inline-block')
                         .css('margin-left', '0px');
                     $('#legend2').append(legendItem)
-=======
-                    var color_array2 = ['#03658C', '#7CA69E', '#F2594A', '#F28C4B', '#7E6F6A', '#36AFB2', '#9c6db2', '#d24a67', '#89a958', '#00739a', '#BDBDBD'];
-                    var donut = new Morris.Donut({
-                        element: 'donut-chart2',
-                        resize: true,
-                        colors: color_array2,
-                        data: [
-                            <?php foreach ($get_plot2 as $row) :
-                            ?> {
-                                    label: '<?php echo $row->nama_jabatan ?>',
-                                    value: <?php echo $row->total_karyawan; ?>,
-                                },
-                            <?php endforeach; ?>
-                        ],
-                        hideHover: 'auto'
-                    });
-
-                    donut.options.data.forEach(function(label, i) {
-                        var legendItem = $('<span></span>').text(label['label'] + " ( " + label['value'] + " )").prepend('<i>&nbsp;</i>');
-                        legendItem.find('i')
-                            .css('backgroundColor', donut.options.colors[i])
-                            .css('width', '20px')
-                            .css('display', 'inline-block')
-                            .css('margin-left', '0px');
-                        $('#legend2').append(legendItem)
-                    });
->>>>>>> ba7ed0298ccfe3b400b882a1f8d5414b2123d241
                 });
             </script>
         </div>
