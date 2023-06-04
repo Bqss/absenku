@@ -54,7 +54,7 @@ class Dashboard extends CI_Controller
 				'box' 		=> 'yellow-active',
 				'total' 	=> $this->dashboard->getLocationTotal(),
 				'title'		=> 'lokasi',
-        "redirect" => "",
+        "redirect" => "lokasi",
 				'icon'		=> 'building'
 			],
 		// 	[

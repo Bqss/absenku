@@ -123,8 +123,8 @@
                     data: [
                         <?php foreach ($get_plot as $row) :
                                 ?> {
-                            label: '<?php echo $row->nama_gedung ?>',
-                            value: <?php echo $row->total_karyawan; ?>,
+                            label: '<?php echo $row->nama_tempat ?>',
+                            value: <?php echo $row->total_siswa; ?>,
                         },
                         <?php endforeach; ?>
                     ],
@@ -150,13 +150,17 @@
                     data: [
                         <?php foreach ($get_plot2 as $row) :
                                 ?> {
-                            label: '<?php echo $row->nama_jabatan ?>',
-                            value: <?php echo $row->total_karyawan; ?>,
+                            // label: '<?php echo $row->nama_jabatan ?>',
+                            label: '<?php echo "saya"; ?>',
+                            // value: <?php echo $row->total_karyawan; ?>,
+                            value: <?php echo 5; ?>,
                         },
                         <?php endforeach; ?>
                     ],
+                    
                     hideHover: 'auto'
                 });
+
 
                 donut.options.data.forEach(function(label, i) {
                     var legendItem = $('<span></span>').text(label['label'] + " ( " + label['value'] + " )").prepend('<i>&nbsp;</i>');

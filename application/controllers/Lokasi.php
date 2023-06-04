@@ -13,7 +13,7 @@ class Lokasi extends CI_Controller
         if (!$this->ion_auth->logged_in()) {
             redirect('auth');
         } 
-        $this->load->model('Gedung_model');
+        $this->load->model('gedung_model');
         $this->load->library('form_validation');
         $this->user = $this->ion_auth->user()->row();
     }
@@ -46,9 +46,9 @@ class Lokasi extends CI_Controller
             $hasil = 1;
         }
         $user = $this->user;
-        $gedung = $this->Gedung_model->get_all();
+        $tempat = $this->gedung_model->get_all();
         $data = array(
-            'gedung_data' => $gedung,
+            'tempat_data' => $tempat,
             'user' => $user,
             'users'     => $this->ion_auth->user()->row(),
             'result' => $hasil,
@@ -60,10 +60,10 @@ class Lokasi extends CI_Controller
     public function rd($id)
     {
         $user = $this->user;
-        $gedung = $this->Gedung_model->get_by_id_q($id);
+        $tempat = $this->gedung_model->get_by_id_q($id);
 
         $data = array(
-            'gedung_data' => $gedung,
+            'tempat_data' => $tempat,
             'user' => $user,
             'users'     => $this->ion_auth->user()->row(),
         );
@@ -82,8 +82,8 @@ class Lokasi extends CI_Controller
             'box' => 'info',
             'button' => 'Create',
             'action' => site_url('lokasi/create_action'),
-            'gedung_id' => set_value('gedung_id'),
-            'nama_gedung' => set_value('nama_gedung'),
+            'tempat_id' => set_value('tempat_id'),
+            'nama_tempat' => set_value('nama_tempat'),
             'alamat' => set_value('alamat'),
             'user' => $user,
             'users'     => $this->ion_auth->user()->row(),
@@ -101,10 +101,10 @@ class Lokasi extends CI_Controller
             $this->create();
         } else {
             $data = array(
-                'nama_gedung' => strtoupper($this->input->post('nama_gedung', TRUE)),
+                'nama_tempat' => strtoupper($this->input->post('nama_tempat', TRUE)),
                 'alamat' => $this->input->post('alamat', TRUE),
             );
-            $this->Gedung_model->insert($data);
+            $this->gedung_model->insert($data);
             $this->session->set_flashdata('messageAlert', $this->messageAlert('success', 'Berhasil menambahkan Lokasi'));
             redirect(site_url('lokasi'));
         }
@@ -116,14 +116,14 @@ class Lokasi extends CI_Controller
             show_error('Hanya Administrator yang diberi hak untuk mengakses halaman ini, <a href="' . base_url('dashboard') . '">Kembali ke menu awal</a>', 403, 'Akses Terlarang');
         }
         $user = $this->user;
-        $row = $this->Gedung_model->get_by_id($id);
+        $row = $this->tempat_model->get_by_id($id);
         if ($row) {
             $data = array(
                 'box' => 'warning',
                 'button' => 'Update',
                 'action' => site_url('lokasi/update_action'),
-                'gedung_id' => set_value('gedung_id', $row->gedung_id),
-                'nama_gedung' => set_value('nama_gedung', $row->nama_gedung),
+                'tempat_id' => set_value('tempat_id', $row->tempat_id),
+                'nama_tempat' => set_value('nama_tempat', $row->nama_tempat),
                 'alamat' => set_value('alamat', $row->alamat),
                 'user' => $user,
                 'users'     => $this->ion_auth->user()->row(),
@@ -142,13 +142,13 @@ class Lokasi extends CI_Controller
         }
         $this->_rules();
         if ($this->form_validation->run() == FALSE) {
-            $this->update($this->input->post('gedung_id', TRUE));
+            $this->update($this->input->post('tempat_id', TRUE));
         } else {
             $data = array(
-                'nama_gedung' => strtoupper($this->input->post('nama_gedung', TRUE)),
+                'nama_tempat' => strtoupper($this->input->post('nama_tempat', TRUE)),
                 'alamat' => $this->input->post('alamat', TRUE),
             );
-            $this->Gedung_model->update($this->input->post('gedung_id', TRUE), $data);
+            $this->tempat_model->update($this->input->post('tempat_id', TRUE), $data);
             $this->session->set_flashdata('messageAlert', $this->messageAlert('success', 'Berhasil merubah data lokasi'));
             redirect(site_url('lokasi'));
         }
@@ -159,9 +159,9 @@ class Lokasi extends CI_Controller
         if (!$this->ion_auth->is_admin()) {
             show_error('Hanya Administrator yang diberi hak untuk mengakses halaman ini, <a href="' . base_url('dashboard') . '">Kembali ke menu awal</a>', 403, 'Akses Terlarang');
         }
-        $row = $this->Gedung_model->get_by_id($id);
+        $row = $this->gedung_model->get_by_id($id);
         if ($row) {
-            $this->Gedung_model->delete($id);
+            $this->gedung_model->delete($id);
             $this->session->set_flashdata('messageAlert', $this->messageAlert('success', 'Berhasil menghapus data Lokasi'));
             redirect(site_url('lokasi'));
         } else {
@@ -172,9 +172,9 @@ class Lokasi extends CI_Controller
 
     public function _rules()
     {
-        $this->form_validation->set_rules('nama_gedung', 'nama gedung', 'trim|required');
+        $this->form_validation->set_rules('nama_tempat', 'nama tempat', 'trim|required');
         $this->form_validation->set_rules('alamat', 'alamat', 'trim|required');
-        $this->form_validation->set_rules('gedung_id', 'gedung_id', 'trim');
+        $this->form_validation->set_rules('tempat_id', 'tempat_id', 'trim');
         $this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
     }
 }

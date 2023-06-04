@@ -60,10 +60,10 @@ class Dashboard_model extends Ci_Model{
 
       function get_max($id){
           $gi = $this->group_by_gi($id);
-          $select = array('a.nama_gedung,count(b.id_kegiatan) as total_siswa');
+          $select = array('a.nama_tempat,count(b.id_kegiatan) as total_siswa');
           $this->db->select($select);
-          $this->db->from('presensi_siswa as b , gedung as a');
-          $this->db->where('b.id_kegiatan=a.gedung_id');
+          $this->db->from('presensi_siswa as b , tempat as a');
+          $this->db->where('b.id_kegiatan=a.tempat_id');
           $this->db->group_by('b.id_kegiatan');
           $this->db->order_by('total_siswa desc, b.id_kegiatan');
           return $this->db->get();
@@ -80,9 +80,9 @@ class Dashboard_model extends Ci_Model{
     // }
 
         function group_by_gi($id){
-          $this->db->select('gedung_id');
-          $this->db->from('gedung');
-          $this->db->group_by('gedung_id');
+          $this->db->select('tempat_id');
+          $this->db->from('tempat');
+          $this->db->group_by('tempat_id');
           return $this->db->get()->result_array();
         }
 }
