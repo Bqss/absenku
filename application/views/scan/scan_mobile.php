@@ -77,6 +77,7 @@
     codeReader.getVideoInputDevices()
       .then((videoInputDevices) => {
         const sourceSelect = document.getElementById('sourceSelect')
+        console.log(videoInputDevices)
 
         if (videoInputDevices.length >= 0) {
           videoInputDevices.forEach((element, i) => {

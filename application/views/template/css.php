@@ -1,3 +1,4 @@
+<script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/bootstrap/css/custom-button.min.css">
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/font-awesome-4.4.0/css/font-awesome.min.css">
@@ -13,7 +14,7 @@
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/app/css/print.css">
 <link rel="stylesheet" href="<?php echo base_url()  ?>assets/plugins/datepicker/datepicker3.css">
 <script src="<?php echo base_url() ?>assets/plugins/jQuery/jQuery-2.1.4.min.js"></script>
-<script src="https://cdn.tailwindcss.com"></script>
+
 
 
 

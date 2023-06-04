@@ -51,10 +51,8 @@ class Scan extends Ci_Controller
     if ($this->agent->is_mobile('iphone')) {
       $this->template->load('scan/template_sc', 'scan/scan_mobile', $data);
     } elseif ($this->agent->is_mobile()) {
-
       $this->template->load('scan/template_sc', 'scan/scan_mobile', $data);
     } else {
-
       $this->template->load('scan/template_sc', 'scan/scan_desktop', $data);
     }
   }
