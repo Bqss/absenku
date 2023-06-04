@@ -40,23 +40,23 @@
                                 <?php
                                 $start = 0;
                                 foreach ($users_data as $users) { ?>
-                                <tr>
-                                    <td><?php echo ++$start ?></td>
-                                    <td><?php echo $users->first_name, '&nbsp',  $users->last_name ?></td>
-                                    <td><?php echo $users->username ?></td>
-                                    <td><?php echo $users->email ?></td>
-                                    <td><?php echo $users->name ?></td>
-                                    <td><?php echo $users->created_on ?></td>
-                                    <td><?php if ($users->active == '1') { ?><span class="label label-success"><?php echo "active";
+                                    <tr>
+                                        <td><?php echo ++$start ?></td>
+                                        <td><?php echo $users->first_name, '&nbsp',  $users->last_name ?></td>
+                                        <td><?php echo $users->username ?></td>
+                                        <td><?php echo $users->email ?></td>
+                                        <td><?php echo $users->name ?></td>
+                                        <td><?php echo $users->created_on ?></td>
+                                        <td><?php if ($users->active == '1') { ?><span class="label label-success"><?php echo "active";
                                                                                                                 } else { ?><span class="label label-danger"><?php echo "non active";
-                                                                                                                                                                                } ?></td>
-                                    <td style="text-align:center" width="140px">
-                                        <?php
+                                                                                                                                                        } ?></td>
+                                        <td class="flex justify-center" >
+                                            <?php
                                             echo anchor(site_url('users/update/' . $users->id), '<i class="fa fa-pencil-square-o fa-lg"></i>&nbsp;&nbsp;Edit', array('title' => 'edit', 'class' => 'btn btn-md btn-warning btn-edit-data btn3d'));
                                             echo anchor(site_url('users/delete/' . $users->id), '<i class="fa fa-trash fa-lg"></i>&nbsp;&nbsp;Hapus', 'title="delete" class="btn btn-md btn-danger btn-remove-data btn3d"');
                                             ?>
-                                    </td>
-                                </tr> <?php } ?>
+                                        </td>
+                                    </tr> <?php } ?>
                             </tbody>
                         </table>
                         <script type="text/javascript">

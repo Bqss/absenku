@@ -66,20 +66,7 @@
                                 <th class="desktop">Aksi</th>
                             </tr>
                         </thead>
-                        <!-- <tbody>
-                          <?php foreach($data_siswa as $i => $siswa) : ?>
-                            <tr>
-                                <th class="all"><?= $i + 1 ?></th>
-                                <th class="all"><?= $siswa->nis ?></th>
-                                <th class="all"><?= $siswa -> ranting ?></th>
-                                <th class="all"><?= $siswa -> rayon ?></th>
-                                <th class="all"><?= $siswa -> nama ?></th>
-                                <th class="desktop"><?= $siswa -> tgl_lahir ?></th>
-                                <th class="desktop"><?= $siswa -> pasaran ?></th>
-                                <th class="desktop"></th>
-                            </tr>
-                          <?php endforeach ;  ?>
-                        </tbody> -->
+                      
                     </table>
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
