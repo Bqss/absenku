@@ -18,7 +18,7 @@
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <?php if ($this->ion_auth->is_admin()) : ?>
-        <ul class="sidebar-menu">
+         <ul class="sidebar-menu">
             <li>
                 <a href="<?php echo base_url('dashboard') ?>">
                     <i class="fa fa-laptop"></i> <span>DASHBOARD</span>
@@ -70,7 +70,7 @@
                         echo "<li>" . anchor($m->link, "<i class='$m->icon'></i> <span>" . strtoupper($m->name)) . "</span></li>";
                     }
                 }
-            */    ?>
+            */ ?>
         </ul>
         <?php else: ?>
         <ul class="sidebar-menu">
