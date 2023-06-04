@@ -119,7 +119,6 @@
                         element: 'donut-chart',
                         resize: true,
 
-<<<<<<< HEAD
                     colors: color_array1,
                     data: [
                         <?php foreach ($get_plot as $row) :
@@ -131,19 +130,6 @@
                     ],
                     hideHover: 'auto'
                 });
-=======
-                        colors: color_array1,
-                        data: [
-                            <?php foreach ($get_plot as $row) :
-                            ?> {
-                                    label: '<?php echo $row->nama_gedung ?>',
-                                    value: <?php echo $row->total_karyawan; ?>,
-                                },
-                            <?php endforeach; ?>
-                        ],
-                        hideHover: 'auto'
-                    });
->>>>>>> ba7ed0298ccfe3b400b882a1f8d5414b2123d241
 
                     donut2.options.data.forEach(function(label, i) {
                         var legendItem = $('<div class="col"></div>').text(label['label'] + " ( " + label['value'] + " )").prepend('<i>&nbsp;</i>');
