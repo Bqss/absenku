@@ -59,6 +59,8 @@ class Scan extends Ci_Controller
     }
   }
 
+
+
   function cek_id()
   {
     $user = $this->user;
@@ -101,6 +103,8 @@ class Scan extends Ci_Controller
       redirect($_SERVER['HTTP_REFERER']);
     }
   }
+
+
 
   function input_manual()
   {
