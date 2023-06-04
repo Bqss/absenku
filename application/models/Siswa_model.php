@@ -7,7 +7,7 @@ class Siswa_model extends CI_Model
 {
 
     public $table = 'siswa';
-    public $id = 'id_siswa';
+    // public $id = 'id_siswa';
     public $order = 'DESC';
 
     function __construct()
@@ -39,26 +39,25 @@ class Siswa_model extends CI_Model
 
     function get_by_id_query($id)
     {
-        $sql = "SELECT *
-        from siswa 
-        where id_siswa=$id";
+        $sql = "SELECT * from siswa 
+        where nis=$id";
         return $this->db->query($sql)->row($id);
     }
 
     function get_by_no_induk($id)
     {
-        $sql = "SELECT *
-        from siswa 
-        where no_induk=$id";
+        $sql = "SELECT * from siswa where nis=$id ";
         return $this->db->query($sql)->row($id);
     }
 
 
     function getData()
     {
-        $this->datatables->select('*')
-            ->from('siswa');
-        return $this->datatables->generate();
+        // $this->datatables->select('*')
+        //     ->from('siswa');
+        // return $this->datatables->generate();
+        $result =   $this->db->query("select * from siswa") -> result();
+        return $result;
     }
     // get data by id
     function get_by_id($id)
@@ -77,14 +76,16 @@ class Siswa_model extends CI_Model
     // update data
     function update($id, $data)
     {
-        $this->db->where($this->id, $id);
-        $this->db->update($this->table, $data);
+      // dd($id);
+      $this->db->where('nis', $id);
+      $this->db->update($this->table, $data);
+        // $this->db->update($this->table, $data, "nis=$id");
     }
 
     // delete data
     function delete($id)
     {
-        $this->db->where($this->id, $id);
+        $this->db->where('nis', $id);
         $this->db->delete($this->table);
     }
 }

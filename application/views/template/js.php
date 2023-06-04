@@ -14,7 +14,7 @@
 <!-- page script -->
 <script src="<?php echo base_url() ?>assets/plugins/raphael/raphael-min.js"></script>
 <!-- sweetalert -->
-<script src="<?php echo base_url() ?>assets/plugins/sweetalert/sweetalert.min.js"></script>
+<script src="<?php echo base_url() ?>assets/plugins/sweetalert/sweetAlert.min.js"></script>
 <!-- font awesome picker -->
 
 <script src="<?php echo base_url() ?>assets/plugins/fapicker/dist/js/fontawesome-iconpicker.js"></script>

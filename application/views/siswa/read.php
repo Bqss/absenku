@@ -12,8 +12,8 @@
                             <td valign=2><img src='<?php echo base_url() ?>foto_057/FOTO/<?php echo substr($no_induk,4,4); ?>.JPG' class="img-circle"></td>
                         </tr>
                         <tr>
-                            <td>No ID</td>
-                            <td><?php echo $no_induk; ?></td>
+                            <td>NIS</td>
+                            <td><?php echo $nis; ?></td>
                         </tr>
                         <tr>
                             <td>Nama Siswa</td>
@@ -47,10 +47,10 @@
                             <td>Alamat</td>
                             <td><?php echo $alamat; ?></td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td>Kelas</td>
                             <td><?php echo $kelas; ?></td>
-                        </tr>
+                        </tr> -->
                         <tr>
                             <td colspan="2" style="text-align:center;"><a href="<?php echo site_url('siswa') ?>" class="btn-xs btn btn-primary">Kembali</a></td>
                         </tr>

@@ -29,10 +29,10 @@
         <div class='col-xs-12'>
             <div class='box box-primary'>
                 <div class='box-header  with-border'>
-                    <h3 class='box-title'>HISTORI ABSENSI <?php echo $gedung->nama_gedung ?></h3>
-                    <div class="pull-right">
-                        <?php echo anchor(site_url('presensi/create/' . $gedung->gedung_id), ' <i class="fa fa-plus"></i> &nbsp;&nbsp; Tambah Baru', ' class="btn btn-unique btn-lg btn-create-data btn3d"'); ?>
-                    </div>
+                    <h3 class='box-title'>HISTORI ABSENSI KEGIATAN <?php echo strtoupper($kegiatan-> kegiatan) ?> DI <?= $kegiatan->lokasi ?></h3>
+                    <!-- <div class="pull-right">
+                        <?php echo anchor(site_url('presensi/create/' . $kegiatan-> id_kegiatan), ' <i class="fa fa-plus"></i> &nbsp;&nbsp; Tambah Baru', ' class="btn btn-unique btn-lg btn-create-data btn3d"'); ?>
+                    </div> -->
                 </div>
                 <div class="box-body">
                 </div><!-- /.box-header -->
@@ -53,13 +53,15 @@
                         <thead>
                             <tr>
                                 <th class="all">No</th>
-                                <th class="all">Nis</th>
                                 <th class="all">Nama</th>
-                                <th class="all">Tanggal</th>
-                                <th class="desktop">ranting</th>
-                                <th class="desktop">rayon</th>
-                                <th class="desktop">Kehadiran</th>
-                                <th class="desktop">tempat latihan</th>
+                                <th class="all">NIS</th>
+                                <th class="all">Ranting</th>
+                                <th class="all">Rayon</th>
+                                <th class="desktop">tgl Absen</th>
+                                <th class="desktop">Jam Masuk</th>
+                                <th class="desktop">Keterangan</th>
+                                <!-- <th class="desktop">Operator</th> -->
+                                <th class="desktop">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -77,9 +79,8 @@
     let base_url = '<?= base_url() ?>';
 </script>
 <script type="text/javascript">
-    let segment = '<?= $this->uri->segment(3) ?>';
-    <?php $gedung = $this->Gedung_model->get_by_id($segment = $this->uri->segment(3)); ?>
-    let gedung = '<?= $gedung->nama_gedung ?>'
+    let segment = '<?= $kegiatan -> id_kegiatan  ?>';
+    let namaKegiatan = '<?= $kegiatan -> kegiatan ?>';
 </script>
 <script type="text/javascript">
     let checkLogin = '<?= $result ?>';

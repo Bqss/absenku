@@ -26,39 +26,44 @@ class Dashboard extends CI_Controller
 			$data['info_box'] = $this->admin_box();
 			$plotting  = array('1', '2', '3', '4', '5', '6', '7');
 			$plotting2 = array('1', '2', '3', '4');
-			$data['get_plot'] = $this->dashboard->get_max($plotting)->result();
-			$data['get_plot2'] = $this->dashboard->get_max2($plotting2)->result();
+			$data['get_plot'] = $this->dashboard->get_max("1")->result();
+			// $data['get_plot2'] = $this->dashboard->get_max2($plotting2)->result();
 		}
 		$this->template->load('template/template', 'dashboard/dashboard', $data);
 	}
 
 	public function admin_box()
 	{
+
 		$box = [
 			[
 				'box' 		=> 'light-blue',
-				'total' 	=> $this->dashboard->total('karyawan'),
+				'total' 	=> $this->dashboard->total('siswa'),
 				'title'		=> 'Total Siswa',
+        'redirect' => "siswa",
 				'icon'		=> 'user'
 			],
 			[
 				'box' 		=> 'olive',
-				'total' 	=> $this->dashboard->total('jabatan'),
-				'title'		=> 'Siswa Masuk',
+				'total' 	=> $this->dashboard->total('kegiatan'),
+				'title'		=> 'Total Kegiatan',
+        'redirect' => "kegiatan",
 				'icon'		=> 'user'
 			],
 			[
 				'box' 		=> 'yellow-active',
-				'total' 	=> $this->dashboard->total('gedung'),
+				'total' 	=> $this->dashboard->getLocationTotal(),
 				'title'		=> 'lokasi',
+        "redirect" => "",
 				'icon'		=> 'building'
 			],
-			[
-				'box' 		=> 'red',
-				'total' 	=> $this->dashboard->total('shift'),
-				'title'		=> 'shift',
-				'icon'		=> 'retweet'
-			],
+		// 	[
+		// 		'box' 		=> 'red',
+		// 		'total' 	=> $this->dashboard->total('shift'),
+		// 		'title'		=> 'shift',
+        // "redirect" => "",
+		// 		'icon'		=> 'retweet'
+		// 	],
 		];
 		$info_box = json_decode(json_encode($box), FALSE);
 		return $info_box;

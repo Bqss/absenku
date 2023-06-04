@@ -38,7 +38,7 @@
                         <li class="user-header">
                             <img src="<?php echo base_url() ?>assets/dist/img/user4-160x160.jpg" class="img-circle" alt="User Image">
                             <p>
-                                <?= $user->first_name . ' ' . $user->last_name ?>
+                                <?= $user->first_name . '' . $user->last_name ?>
                                 <small>Member since <?= date('M, Y', $user->created_on) ?></small>
                             </p>
                         </li>

@@ -9,9 +9,9 @@
                 <div class="box-body">
                     <form role="form" id="myForm" data-toggle="validator" action="<?php echo $action; ?>" method="post">
                     <div class="form-group">
-                            <label for="no_induk" class="control-label">No ID</label>
+                            <label for="nis" class="control-label">NIS</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" name="no_induk" id="no_induk" data-error="No ID Siswa harus diisi" placeholder="No ID"  required />
+                                <input type="text" class="form-control" name="nis" id="nis" data-error="NIS Siswa harus diisi" placeholder="NIS"  required />
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-user"></span>
                                 </span>

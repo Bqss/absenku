@@ -25,18 +25,15 @@
             <form method="post" action="<?php echo $action; ?>">
               <label for="inputName" class="col-md-3 control-label">Kegiatan</label>
               <div class="col-md-7">
-                <select id="jenis_kegiatan" name="jenis_kegiatan" class="form-control select2" style="width: 100%!important" required>
                   <div class="form-group">
-                    <?php
-                    foreach ($kegiatan as $k) : ?>
-                      <option value="<?= $k->id_kegiatan ?>"><?= strtoupper($k->kegiatan) ?></option>
-                    <?php endforeach; ?>
+                    <?= cmb_dinamis_ec2("jenis_kegiatan","jenis_kegiatan",$kegiatan,'kegiatan','id_kegiatan',$prev_kegiatan) ?>
+                  </div>
                 </select>
               </div>
               <div class="form-group">
                 <label for="inputName" class="col-md-3 control-label">Input QR Manual</label>
                 <div class="col-md-5">
-                  <input type="text" class="form-control" name="qrcode" id="qrcode" maxlength="9">
+                  <input type="text" class="form-control" name="qrcode" id="qrcode" maxlength="12">
                 </div>
                 <div class="col-md-4">
                   <button type="submit" class="btn btn-primary">Submit</button>
@@ -147,3 +144,5 @@ window.addEventListener('load', function () {
 })
 </script>
 */
+
+?>
