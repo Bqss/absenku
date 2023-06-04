@@ -8,10 +8,12 @@
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/fapicker/dist/css/fontawesome-iconpicker.min.css">
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/fontawesome/css/all.css">
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/dist/css.css">
+<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
 <link rel="icon" href="<?php echo base_url(); ?>assets/images/favicon.png" type="image/gif">
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/app/css/print.css">
 <link rel="stylesheet" href="<?php echo base_url()  ?>assets/plugins/datepicker/datepicker3.css">
 <script src="<?php echo base_url() ?>assets/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
 
 
 
