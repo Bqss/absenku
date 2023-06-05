@@ -22,10 +22,18 @@ class Ayam_jago extends CI_Controller
     {
         $data = [
             "user" => $this->user,
-
         ];
-
         $this->template->load('template/template', 'ayamJago/index', $data);
+    }
 
+    public function checkAyamJago() {
+        
+    }
+
+    public function check(){
+        $data = [
+            "user" => $this->user,
+        ];
+        $this->template->load('template/template', 'ayamJago/next',$data);
     }
 }
