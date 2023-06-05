@@ -19,19 +19,6 @@
             <?php echo $contents; ?>
         </div><!-- /.content-wrapper -->
         <?php $this->load->view('template/footer'); ?>
-        <?php /*
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Create the tabs -->
-            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-            </ul>
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <!-- Home tab content -->
-                <div class="tab-pane" id="control-sidebar-home-tab">
-                </div>
-            </div>
-        </aside>
-        */ ?>
         <?php $this->load->view('template/js'); ?>
         <div class="control-sidebar-bg"></div>
     </div>

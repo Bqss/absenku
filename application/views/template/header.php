@@ -44,7 +44,7 @@
                         </li>
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="<?php echo base_url(('users/profile/') . $users->id); ?>" class="btn btn-default btn-lg">Profile</a>
+                                <a href="<?php echo base_url(('users/profile/') . $user->id); ?>" class="btn btn-default btn-lg">Profile</a>
                             </div>
                             <div class="pull-right">
                                 <?php
