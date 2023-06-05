@@ -10,15 +10,16 @@
         <div class='col-xs-12'>
             <div class='box box-primary'>
                 <div class='box-header  with-border'>
-                    <h3 class='box-title'>REKAP ABSENSI</h3>
+                    <h3 class='box-title'>REKAP CHECKER</h3>
                 </div>
                 <div class="box-body">
                     <table id="mytable" class="table table-bordered table-hover display" style="width:100%;">
                         <thead>
                             <tr>
-                                <th>Lokasi</th>
-                                <th>Alamat</th>
-                                <th>Action</th>
+                                <th>No</th>
+                                <th>NO_ID</th>
+                                <th>keterangan</th>
+                                <th>Alasan Tidak lulus</th>
                             </tr>
                         </thead>
                     </table>
