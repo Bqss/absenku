@@ -6,11 +6,11 @@ if (!defined('BASEPATH'))
 class Rekap_model extends CI_Model
 {
 
-    public $table = 'gedung';
-    public $id = 'gedung_id';
+    public $table = 'tempat';
+    public $id = 'tempat_id';
     public $id_karyawan = 'id_karyawan';
     public $order = 'DESC';
-    public $column = array('nama_gedung', 'alamat');
+    public $column = array('nama_tempat', 'alamat');
     public $id_khd = 'id_khd';
     public $tgl = 'tgl';
     public $dayList = 'D';
@@ -38,8 +38,8 @@ class Rekap_model extends CI_Model
     // get total rows
     function total_rows($q = NULL)
     {
-        $this->db->like('gedung_id', $q);
-        $this->db->or_like('nama_gedung', $q);
+        $this->db->like('tempat_id', $q);
+        $this->db->or_like('nama_tempat', $q);
         $this->db->or_like('alamat', $q);
         $this->db->from($this->table);
         return $this->db->count_all_results();
@@ -49,8 +49,8 @@ class Rekap_model extends CI_Model
     function get_limit_data($limit, $start = 0, $q = NULL)
     {
         $this->db->order_by($this->id, $this->order);
-        $this->db->like('gedung_id', $q);
-        $this->db->or_like('nama_gedung', $q);
+        $this->db->like('tempat_id', $q);
+        $this->db->or_like('nama_tempat', $q);
         $this->db->or_like('alamat', $q);
         $this->db->limit($limit, $start);
         return $this->db->get($this->table)->result();
@@ -86,17 +86,17 @@ class Rekap_model extends CI_Model
 
     private function _get_datatables_query()
     {
-        $query = "select * from gedung";
+        $query = "select * from tempat";
         $i = 0;
         if ($_POST['search']['value']) {
             $searchkey = $_POST['search']['value'];
             $query .= "
-            where nama_gedung LIKE '%" . $searchkey . "%'
+            where nama_tempat LIKE '%" . $searchkey . "%'
             or alamat LIKE '%" . $searchkey . "%'
             ";
         }
 
-        $column = array('nama_gedung', 'alamat');
+        $column = array('nama_tempat', 'alamat');
         $i = 0;
         foreach ($column as $item) {
             $column[$i] = $item;
@@ -113,16 +113,16 @@ class Rekap_model extends CI_Model
 
     public function count_all()
     {
-        $this->db->select("gedung");
+        $this->db->select("tempat");
 
         return $this->db->count_all_results();
     }
 
     function count_filtered()
     {
-        $this->db->where("nama_gedung");
+        $this->db->where("nama_tempat");
         $this->db->where("alamat");
-        $this->db->from("gedung");
+        $this->db->from("tempat");
         $query = $this->_get_datatables_query();
         return $this->db->query($query)->num_rows();
     }
@@ -132,8 +132,8 @@ class Rekap_model extends CI_Model
     {
         $start = $_GET['start'];
         $end = $_GET['end'];
-        $this->db->select('a.gedung_id,b.id_karyawan,c.tgl,c.id_khd');
-        $this->db->from('gedung as a,karyawan as b,presensi as c');
+        $this->db->select('a.tempat_id,b.id_karyawan,c.tgl,c.id_khd');
+        $this->db->from('tempat as a,karyawan as b,presensi as c');
         $this->db->where('a.gedung_id=b.gedung_id');
         $this->db->where('b.id_karyawan=c.id_karyawan');
         $this->db->group_by('c.tgl');
