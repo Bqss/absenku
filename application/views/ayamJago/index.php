@@ -3,8 +3,8 @@
         <div class="box-header">
             <h1 class="text-4xl font-bold">Form Cek Ayam Jago</h1>
         </div>
-        <div class="box-body mt-3">
-            <div class="max-w-5xl flex flex-col gap-4">
+        <div class="box-body mt-3 max-w-5xl">
+            <div class=" flex flex-col gap-4">
                 <div class="flex gap-2 sm:gap-6 items-start w-full flex-col sm:flex-row sm:items-center">
                     <label for="" class="flex-shrink-0">Pilih Camera</label>
                     <select type="text" name="cameraOpt" class=" form-control" id="sourceSelect">
@@ -22,11 +22,10 @@
                     <button class="btn btn-success mt-6 ">Submit</button>
                 </form>
             </div>
-
-            <div class="max-w-2xl p-6 bg-gray-200 mt-8 rounded-2xl">
+            <div class="max-w-2xl mx-auto p-3 sm:p-6 bg-gray-200 mt-8 rounded-2xl">
                 <video id="video" width="100%" class="aspect-square bg-white border border-gray-400 rounded-2xl"></video>
             </div>
-        </div </div>
+        </div>
     </div>
 </section>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/plugins/sweetalert/sweetAlert.min.js"></script>
