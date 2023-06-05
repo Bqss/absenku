@@ -103,7 +103,7 @@
                     data: [
                         <?php foreach ($get_plot as $row) :
                         ?> {
-                                label: '<?php echo $row->nama_gedung ?>',
+                                label: '<?php echo $row->nama_tempat ?>',
                                 value: <?php echo $row->total_karyawan; ?>,
                             },
                         <?php endforeach; ?>
