@@ -33,10 +33,9 @@
         <div class='col-xs-12'>
             <div class='box box-primary'>
                 <div class='box-header  with-border'>
-                    <h3 class='box-title'>DATA SISWA</h3>
+                    <h3 class='box-title'>DATA AYAM JAGO</h3>
                     <div class="pull-right">
-                        <?php echo anchor(site_url('cari_siswa'), ' <i class="fa fa-plus"></i> &nbsp;&nbsp; Validasi Siswa', ' class="btn btn-unique btn-lg btn-create-data btn3d" '); ?>
-                        <?php echo anchor(site_url('tambah_siswa'), ' <i class="fa fa-plus"></i> &nbsp;&nbsp; Tambah Baru', ' class="btn btn-unique btn-lg btn-create-data btn3d" '); ?>
+                        <?php echo anchor(site_url('ayamjago/create'), ' <i class="fa fa-plus"></i> &nbsp;&nbsp; Tambah Baru', ' class="btn btn-primary btn-lg btn-create-data btn3d" '); ?>
                     </div>
                 </div>
                 <div class="box-body">
@@ -52,21 +51,19 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <table id="mytable" class="table table-bordered table-hover display" style="width:100%;">
                         <thead>
                             <tr>
                                 <th class="all">No.</th>
-                                <th class="all">No ID</th>
-                                <th class="all">Ranting</th>
-                                <th class="all">Rayon</th>
-                                <th class="all">Nama Siswa</th>
-                                <th class="desktop">TTL</th>
-                                <th class="desktop">Pasaran</th>
-                                <th class="desktop">Aksi</th>
+                                <th class="all">Id_check</th>
+                                <th class="all">id_ayam_jago</th>
+                                <th class="all">keterangan</th>
+                                <th class="all">alasan</th>
+                                <th class="desktop">created_at</th>
+                                <th class="desktop">Action</th>
                             </tr>
                         </thead>
-                      
                     </table>
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
@@ -79,4 +76,4 @@
 <script type="text/javascript">
     let checkLogin = '<?= $result ?>';
 </script>
-<script src="<?php echo base_url() ?>assets/app/datatables/siswa.js" charset="utf-8"></script>
+<script src="<?php echo base_url() ?>assets/app/datatables/hasilCekAyam.js" charset="utf-8"></script>

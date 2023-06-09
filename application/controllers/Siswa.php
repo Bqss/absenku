@@ -295,14 +295,14 @@ class Siswa extends CI_Controller
   }
 
 
-  public function _rules()
-  {
-    $this->form_validation->set_rules('nama_karyawan', 'nama karyawan', 'trim|required');
-    $this->form_validation->set_rules('jabatan', 'jabatan', 'trim|required');
-    $this->form_validation->set_rules('id_shift', 'id_shift', 'trim|required');
-    $this->form_validation->set_rules('id_karyawan', 'id_karyawan', 'trim');
-    $this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
-  }
+//   public function _rules()
+//   {
+//     $this->form_validation->set_rules('nama_karyawan', 'nama karyawan', 'trim|required');
+//     $this->form_validation->set_rules('jabatan', 'jabatan', 'trim|required');
+//     $this->form_validation->set_rules('id_shift', 'id_shift', 'trim|required');
+//     $this->form_validation->set_rules('id_karyawan', 'id_karyawan', 'trim');
+//     $this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
+//   }
 
   function _set_useragent()
   {
