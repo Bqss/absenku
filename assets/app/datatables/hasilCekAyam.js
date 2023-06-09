@@ -6,7 +6,7 @@ $(document).ready(function () {
     .DataTable({
       initComplete: function () {
         let api = this.api();
-        $("#siswa_filter input")
+        $("#ayamJago_filter input")
           .off(".DT")
           .on("keyup.DT", function (e) {
             api.search(this.value).draw();
@@ -14,7 +14,7 @@ $(document).ready(function () {
       },
       responsive: true,
       processing: true,
-      // serverSide: true,
+    //   serverSide: true,
       colReorder: true,
       oLanguage: {
         sProcessing: "loading...",
@@ -25,46 +25,41 @@ $(document).ready(function () {
       ],
       order: [[0, "asc"]],
       ajax: {
-        url: base_url + "siswa/data",
+        url: base_url + "hasilcek/data",
         type: "POST",
         dataSrc: "",
       },
       columns: [
         { data: null, defaultContent: "" },
-        { data: "nis" },
-        { data: "ranting" },
-        { data: "rayon" },
-        { data: "nama" },
-        { data: "tempat_lahir" },
-        { data: "pasaran" },
-        { data: null },
+        { data: "id_check" },
+        { data: "id_ayam_jago" },
+        { data: "keterangan" },
+        { data: "alasan" },
+        { data: "created_at" },
+        { data: null}
       ],
       columnDefs: [
         {
-          data: {
-            id_siswa: "id_siswa",
-          },
-          targets: 7,
+         
+          targets: 6,
           orderable: false,
           searchable: false,
           render: function (data, type, row, meta) {
-
             let btn;
             if (checkLogin == 0) {
-              return `<a href="${base_url}siswa/detail/${data.nis}" title="lihat" class="btn btn-md btn-success btn3d btn-view-data">
+              return `<a href="${base_url}hasilcek/detail/${data.id_hasil_cek}" title="lihat" class="btn btn-md btn-success btn3d btn-view-data">
                         <i class="fa fa-eye"></i> Lihat
                         </a>`;
             } else {
               return `  
-                        <a href="${base_url}siswa/detail/${data.nis}" title="lihat" class="btn btn-md btn-success btn3d btn-view-data">
-                            <i class="fa fa-eye"></i> Lihat
-                        </a>
-                        <a href="${base_url}siswa/update/${data.nis}" title="edit" class="btn btn-md btn-primary btn3d btn-view-data">
-                            <i class="fa fa-pen"></i> Edit
-                        </a>
-                        <a href="${base_url}siswa/delete/${data.nis}" title="delete" class="btn btn-md btn-danger btn3d btn-view-data">
-                            <i class="fa fa-trash"></i>Delete
-                        </a>
+                        <div class="flex justify-center">
+                            <a href="${base_url}hasilcek/detail/${data.id_check}" title="lihat" class="btn btn-md btn-success btn3d btn-view-data">
+                                <i class="fa fa-eye"></i> Lihat
+                            </a>
+                            <a href="${base_url}hasilcek/delete/${data.id_check}" title="delete" class="btn btn-md btn-danger btn3d btn-view-data">
+                                <i class="fa fa-trash"></i>Delete
+                            </a>
+                        </div>
                         `;
             }
           },
@@ -76,31 +71,31 @@ $(document).ready(function () {
         {
           extend: "csv",
           exportOptions: {
-            columns: [0, 1, 2, 3, 4, 5, 6],
+            columns: [0, 1, 2, 3, 4, 5],
           },
         },
         {
           extend: "excel",
-          title: "Data Siswa",
+          title: "Data hasil cek ayam jago",
           exportOptions: {
-            columns: [0, 1, 2, 3, 4, 5, 6],
+            columns: [0, 1, 2, 3, 4, 5],
           },
         },
         {
           extend: "copy",
-          title: "Data Siswa",
+          title: "Data hasil cek ayam jago",
           exportOptions: {
-            columns: [0, 1, 2, 3, 4, 5, 6],
+            columns: [0, 1, 2, 3, 4, 5],
           },
         },
         {
           extend: "pdf",
           oriented: "portrait",
           pageSize: "legal",
-          title: "Data Siswa",
+          title: "Data hasil cek ayam jago",
           download: "open",
           exportOptions: {
-            columns: [0, 1, 2, 3, 4, 5, 6],
+            columns: [0, 1, 2, 3, 4, 5],
           },
           customize: function (doc) {
             doc.content[1].table.widths = Array(
@@ -116,9 +111,9 @@ $(document).ready(function () {
           extend: "print",
           oriented: "portrait",
           pageSize: "A4",
-          title: "Data Siswa",
+          title: "Data hasil cek ayam jago",
           exportOptions: {
-            columns: [0, 1, 2, 3, 4, 5, 6],
+            columns: [0, 1, 2, 3, 4, 5],
           },
         },
       ],

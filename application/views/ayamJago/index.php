@@ -1,94 +1,80 @@
-<section class="content">
-    <div class="box p-3 sm:p-6">
-        <div class="box-header">
-            <h1 class="text-4xl font-bold">Form Cek Ayam Jago</h1>
-        </div>
-        <div class="box-body mt-3 max-w-5xl">
-            <div class=" flex flex-col gap-4">
-                <div class="flex gap-2 sm:gap-6 items-start w-full flex-col sm:flex-row sm:items-center">
-                    <label for="" class="flex-shrink-0">Pilih Camera</label>
-                    <select type="text" name="cameraOpt" class=" form-control" id="sourceSelect">
+<!-- Main content -->
+<style media="screen">
+    table,
+    th,
+    tr {
+        text-align: center;
+    }
 
-                    </select>
+    .dataTables_wrapper .dt-buttons {
+        float: none;
+        text-align: center;
+    }
+
+    .sfwal2-popup {
+        font-family: inherit;
+        font-size: 1.2rem;
+    }
+
+    div.dataTables_wrapper div.dataTables_length label {
+        padding-top: 5px;
+        font-weight: normal;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    .swal2-popup {
+        font-family: inherit;
+        font-size: 1.2rem;
+    }
+</style>
+<section class='content'>
+    <div class='row'>
+        <div class='col-xs-12'>
+            <div class='box box-primary'>
+                <div class='box-header  with-border'>
+                    <h3 class='box-title'>DATA AYAM JAGO</h3>
+                    <div class="pull-right">
+                        <?php echo anchor(site_url('ayamjago/create'), ' <i class="fa fa-plus"></i> &nbsp;&nbsp; Tambah Baru', ' class="btn btn-primary btn-lg btn-create-data btn3d" '); ?>
+                    </div>
                 </div>
-                <form action="" method="POST" class=" flex flex-col items-center">
-                    <div class="ml-0 flex gap-2 sm:gap-6 items-start w-full flex-col sm:flex-row sm:items-center">
-                        <label for="id">No.ID </label>
-                        <div class="flex gap-6 w-full sm:w-max sm:flex-1">
-                            <input type="text" name="" class="form-control" id="result">
-                            <button class="btn btn-primary" id="qrTrigger">QR</button>
+                <div class="box-body">
+                    <div class="actionPart">
+                        <div class="actionSelect">
+                            <div class="col-md-3">
+                                <select id="exportLink" class="form-control">
+                                    <option>Pilih Metode Ekspor Data</option>
+                                    <option id="csv">Ekspor menjadi CSV</option>
+                                    <option id="print">Cetak Data</option>
+                                    <option id="pdf">Ekspor menjadi PDF</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                    <button class="btn btn-success mt-6 ">Submit</button>
-                </form>
-            </div>
-            <div class="max-w-2xl mx-auto p-3 sm:p-6 bg-gray-200 mt-8 rounded-2xl">
-                <video id="video" width="100%" class="aspect-square bg-white border border-gray-400 rounded-2xl"></video>
-            </div>
-        </div>
-    </div>
-</section>
-<script type="text/javascript" src="<?php echo base_url() ?>assets/plugins/sweetalert/sweetAlert.min.js"></script>
-<script>
-    <?= $this->session->flashdata('messageAlert'); ?>
-</script>
-<script type="text/javascript" src="<?php echo base_url() ?>assets/plugins/zxing/zxing.min.js"></script>
+
+                    <table id="mytable" class="table table-bordered table-hover display" style="width:100%;">
+                        <thead>
+                            <tr>
+                                <th class="all">No.</th>
+                                <th class="all">Id_ayam_jago</th>
+                                <th class="all">nama</th>
+                                <th class="all">ttl</th>
+                                <th class="all">weton</th>
+                                <th class="desktop">usia</th>
+                                <th class="desktop">jenis_latihan</th>
+                                <th class="desktop">Actions</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div><!-- /.box-body -->
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</section><!-- /.content -->
 <script type="text/javascript">
-    // mengambil data kamera , yaitu arah kamera ke belakang/ atau depan  
-    const getCamName = (cam) => {
-        return cam.label.split(",")[1]?.trim();
-    }
-    window.addEventListener('DOMContentLoaded', function() {
-        let selectedDeviceId;
-        let audio = new Audio("assets/audio/beep.mp3");
-        const qrTrigger = document.querySelector("#qrTrigger");
-        const codeReader = new ZXing.BrowserQRCodeReader();
-
-
-        codeReader.getVideoInputDevices()
-            .then((videoInputDevices) => {
-                const sourceSelect = document.getElementById('sourceSelect')
-                // console.log(videoInputDevices)
-
-                if (videoInputDevices.length >= 0) {
-                    videoInputDevices.forEach((element, i) => {
-                        const sourceOption = document.createElement('option');
-                        if ((localStorage.getItem("selectedDeviceId") == element.deviceId) || getCamName(element) == "facing back" || i == 0 ) {
-                            selectedDeviceId = element.deviceId;
-                            sourceOption.selected = true;
-                        }
-                        sourceOption.text = element.label
-                        sourceOption.value = element.deviceId
-                        sourceSelect.appendChild(sourceOption)
-                    })
-                    //   decode();
-                    // const sourceSelectPanel = document.getElementById('sourceSelectPanel')
-                    // sourceSelectPanel.style.display = 'block'
-                }
-                // handler ketika ganti kamera 
-                sourceSelect.onchange = () => {
-                    selectedDeviceId = sourceSelect.value;
-                    localStorage.setItem("selectedDeviceId", selectedDeviceId);
-                    decode();
-                }
-            })
-            .catch((err) => {
-
-            })
-
-        const decode = async (ev) => {
-            ev && ev.preventDefault();
-            const control = await codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err, control) => {
-
-                if (result) {
-                    console.log(result)
-                    document.getElementById('result').value = result.text
-                    audio.play();
-                    codeReader.reset();
-                    control.stop();
-                }
-            })
-        }
-        qrTrigger.addEventListener("click", decode)
-    })
+    let base_url = '<?= base_url() ?>';
 </script>
+<script type="text/javascript">
+    let checkLogin = '<?= $result ?>';
+</script>
+<script src="<?php echo base_url() ?>assets/app/datatables/ayamJago.js" charset="utf-8"></script>
