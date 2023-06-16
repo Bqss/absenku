@@ -1,7 +1,7 @@
 ---
 deployment:
  tasks:
- - export DEPLOYPATH=/home/shterate/absensi.shteratecabangblitar.org/
+ - export DEPLOYPATH=/home/shterate1/absensi.shteratecabangblitar.org/
  - /bin/cp -R application $DEPLOYPATH
  - /bin/cp -R system $DEPLOYPATH
  - /bin/cp -R assets $DEPLOYPATH
