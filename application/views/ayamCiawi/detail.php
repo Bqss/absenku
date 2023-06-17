@@ -38,7 +38,7 @@
                             <td><?php echo $ayamJago->jenis_latihan  ?></td>
                         </tr>
                         <tr>
-                            <td colspan="2" style="text-align:center;"><a href="<?php echo site_url('ayamjago') ?>" class="btn-xs btn btn-primary">Kembali</a></td>
+                            <td colspan="2" style="text-align:center;"><a href="<?php echo site_url('ayamCiawi') ?>" class="btn-xs btn btn-primary">Kembali</a></td>
                         </tr>
                     </table>
                 </div><!-- /.box-body -->
