@@ -1,7 +1,7 @@
 <section class="content">
     <div class="box p-3 sm:p-6">
         <div class="box-header">
-            <h1 class="text-4xl font-bold">Form Cek Ayam Jago</h1>
+            <h1 class="text-4xl font-bold">Form Cek Ayam Ciawi</h1>
         </div>
         <div class="box-body mt-3 max-w-5xl">
             <div class=" flex flex-col gap-4">

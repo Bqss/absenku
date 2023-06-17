@@ -1,10 +1,10 @@
 <section class="content">
     <div class="box p-3 sm:p-6">
         <div class="box-header">
-            <h1 class="text-4xl font-bold">Form Cek Ayam Jago</h1>
+            <h1 class="text-4xl font-bold">Form Cek Ayam Ciawi</h1>
         </div>
         <div class="box-body mt-10 max-w-5xl">
-            <form action="<?= base_url('cekayamjago/handleCreate') ?>" method="POST">
+            <form action="<?= base_url('cekAyamCiawi/handleCreate') ?>" method="POST">
                 <div class="flex flex-col items-center  w-full ">
                     <div class="flex flex-col items-center sm:flex-row-reverse sm:items-start w-full gap-16 sm:gap-10">
                         <div class="">

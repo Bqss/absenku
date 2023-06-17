@@ -25,7 +25,7 @@ $(document).ready(function () {
       ],
       order: [[0, "asc"]],
       ajax: {
-        url: base_url + "hasilcek/data",
+        url: base_url + "hasilCek/data",
         type: "POST",
         dataSrc: "",
       },
@@ -47,16 +47,16 @@ $(document).ready(function () {
           render: function (data, type, row, meta) {
             let btn;
             if (checkLogin == 0) {
-              return `<a href="${base_url}hasilcek/detail/${data.id_hasil_cek}" title="lihat" class="btn btn-md btn-success btn3d btn-view-data">
+              return `<a href="${base_url}hasilCek/detail/${data.id_hasil_cek}" title="lihat" class="btn btn-md btn-success btn3d btn-view-data">
                         <i class="fa fa-eye"></i> Lihat
                         </a>`;
             } else {
               return `  
                         <div class="flex justify-center">
-                            <a href="${base_url}hasilcek/detail/${data.id_check}" title="lihat" class="btn btn-md btn-success btn3d btn-view-data">
+                            <a href="${base_url}hasilCek/detail/${data.id_check}" title="lihat" class="btn btn-md btn-success btn3d btn-view-data">
                                 <i class="fa fa-eye"></i> Lihat
                             </a>
-                            <a href="${base_url}hasilcek/delete/${data.id_check}" title="delete" class="btn btn-md btn-danger btn3d btn-view-data">
+                            <a href="${base_url}hasilCek/delete/${data.id_check}" title="delete" class="btn btn-md btn-danger btn3d btn-view-data">
                                 <i class="fa fa-trash"></i>Delete
                             </a>
                         </div>

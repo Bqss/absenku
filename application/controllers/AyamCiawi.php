@@ -1,5 +1,5 @@
 <?php
-class AyamJago extends CI_Controller
+class AyamCiawi extends CI_Controller
 {
     public function __construct()
     {
@@ -34,7 +34,7 @@ class AyamJago extends CI_Controller
             "user" => $this->user,
             'result' => !$chek ? 0 : 1,
         ];
-        $this->template->load('template/template', 'ayamJago/index', $data);
+        $this->template->load('template/template', 'ayamCiawi/index', $data);
         $this->load->view('template/datatables');
     }
     public function create()
@@ -44,14 +44,14 @@ class AyamJago extends CI_Controller
             "user" => $this->user,
             'result' => !$chek ? 0 : 1,
         ];
-        $this->template->load('template/template', 'ayamJago/create', $data);
+        $this->template->load('template/template', 'ayamCiawi/create', $data);
     }
 
     public function createHandler()
     {
         $this->rules();
         if($this->form_validation->run() == false){
-            return redirect(site_url('ayamJago/create'));
+            return redirect(site_url('ayamCiawi/create'));
         }
         $data = [
             "nama" => $this->input->post('nama'),
@@ -62,7 +62,7 @@ class AyamJago extends CI_Controller
             // "foto" => $this->input->post('foto'),
         ];
         $this->ayamJago->create($data);
-        redirect(site_url("ayamjago"));
+        redirect(site_url("ayamCiawi"));
     }
     public function update($id_ayam_jago){
         $ayamJago = $this->ayamJago->getById($id_ayam_jago);
@@ -70,13 +70,13 @@ class AyamJago extends CI_Controller
             "user" => $this->user,
             "ayamJago" => $ayamJago[0]
         ];
-        $this->template->load('template/template', 'ayamJago/update', $data);
+        $this->template->load('template/template', 'ayamCiawi/update', $data);
     }
     public function updateHandler($id_ayam_jago)
     {
         $this->rules();
         if($this->form_validation->run() == false){
-            return redirect(site_url('ayamJago/update'));
+            return redirect(site_url('ayamCiawi/update'));
         }
         $data = [
             "nama" => $this->input->post('nama'),
@@ -87,7 +87,7 @@ class AyamJago extends CI_Controller
             // "foto" => $this->input->post('foto'),
         ];
         $this->ayamJago->update($id_ayam_jago, $data);
-        redirect(site_url("ayamjago"));
+        redirect(site_url("ayamCiawi"));
     }
     public function detail($id_ayam_jago){
         $ayamJago = $this->ayamJago->getById($id_ayam_jago);
@@ -95,12 +95,12 @@ class AyamJago extends CI_Controller
             "user" => $this->user,
             "ayamJago" => $ayamJago[0]
         ];
-        $this->template->load('template/template', 'ayamJago/detail', $data);
+        $this->template->load('template/template', 'ayamCiawi/detail', $data);
     }
     public function delete($id_ayam_jago)
     {
         $this->ayamJago->delete($id_ayam_jago);
-        redirect(site_url("ayamjago"));
+        redirect(site_url("ayamCiawi"));
     }
     public function rules(){
         $this-> form_validation->set_rules('nama', 'Nama', 'required');
