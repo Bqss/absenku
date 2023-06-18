@@ -76,7 +76,7 @@
                 "alasan" => $alasan,
             ]);
 
-            $this->session->set_flashData('success', $this->messageAlert('success',"berhasil membuat penilaian"));
+            $this->session->set_flashData('messageAlert', $this->messageAlert('success',"berhasil membuat penilaian"));
             return redirect("/cekAyamCiawi");
         }
     }

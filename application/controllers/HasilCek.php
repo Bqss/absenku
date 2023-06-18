@@ -24,6 +24,20 @@ class HasilCek extends CI_Controller
         $this->template->load('template/template', 'hasilCek/index', $data);
         $this->load->view('template/datatables');
     }
+    public function messageAlert($type, $title)
+    {
+        $messageAlert = "const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+                Toast.fire({
+                    type: '" . $type . "',
+                    title: '" . $title . "'
+                });";
+        return $messageAlert;
+    }
 
     public function delete($id)
     {
