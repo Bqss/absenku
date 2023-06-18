@@ -9,7 +9,7 @@
                     <label for="" class="flex-shrink-0">Pilih Camera</label>
                     <select type="text" name="cameraOpt" class=" form-control" id="sourceSelect"></select>
                 </div>
-                <form action=<?= site_url('cekayamjago/check') ?> method="POST" class=" flex flex-col items-center">
+                <form action=<?= site_url('cekAyamCiawi/check') ?> method="POST" class=" flex flex-col items-center">
                     <div class="ml-0 flex gap-2 sm:gap-6 items-start w-full flex-col sm:flex-row sm:items-center">
                         <label for="id">No.ID </label>
                         <div class="flex gap-6 w-full sm:w-max sm:flex-1">
