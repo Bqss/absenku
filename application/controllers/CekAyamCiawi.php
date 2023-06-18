@@ -39,7 +39,7 @@
         public function check() {
             $id_ayam_jago = $this->input->post("id_ayam_jago");
             if(!$this->hasilCekAyam->checkIsExist($id_ayam_jago)){
-                return redirect(site_url('cekayamjago/create/'.$id_ayam_jago));
+                return redirect(site_url('cekAyamCiawi/create/'.$id_ayam_jago));
             }
             $this->session->set_flashdata('messageAlert', $this->messageAlert('success', 'berhasil cek'));
             return redirect('/cekAyamCiawi');
