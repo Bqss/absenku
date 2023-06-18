@@ -34,9 +34,6 @@
             <div class='box box-primary'>
                 <div class='box-header  with-border'>
                     <h3 class='box-title'>DATA HASIL CEK AYAM CIAWI</h3>
-                    <div class="pull-right">
-                        <?php echo anchor(site_url('ayamjago/create'), ' <i class="fa fa-plus"></i> &nbsp;&nbsp; Tambah Baru', ' class="btn btn-primary btn-lg btn-create-data btn3d" '); ?>
-                    </div>
                 </div>
                 <div class="box-body">
                     <div class="actionPart">

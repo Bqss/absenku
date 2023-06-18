@@ -28,7 +28,7 @@ class HasilCek extends CI_Controller
     public function delete($id)
     {
         $this->hasilCekAyam->delete($id);
-        redirect(site_url('hasilcek'));
+        redirect(site_url('hasilCek'));
     }
     public function output_json($data, $encode = true)
     {
