@@ -48,7 +48,12 @@
     
         public function create($id_ayam_jago){
             
-            $dataayamjago  = $this -> ayamJago-> getById($id_ayam_jago)[0];
+            $dataayamjago  = $this -> ayamJago-> getById($id_ayam_jago);
+            if(count($dataayamjago) == 0){
+                $this->session->set_flashdata('messageAlert', $this->messageAlert('error', 'id salah'));
+                return redirect('/cekAyamCiawi');
+            }
+            $dataayamjago = $dataayamjago[0];
             $data = [
                 "user" => $this->user,
                 "ayamJago" => [
