@@ -42,7 +42,7 @@
                 return redirect(site_url('cekayamjago/create/'.$id_ayam_jago));
             }
             $this->session->set_flashdata('messageAlert', $this->messageAlert('success', 'berhasil cek'));
-            return redirect('/cekayamCiawi');
+            return redirect('/cekAyamCiawi');
 
         }
     
@@ -77,6 +77,6 @@
             ]);
 
             $this->session->set_flashData('success', $this->messageAlert('success',"berhasil membuat penilaian"));
-            return redirect("/cekayamCiawi");
+            return redirect("/cekAyamCiawi");
         }
     }
