@@ -59,7 +59,7 @@
                 "ayamJago" => [
                     "id_ayam_jago" => $id_ayam_jago,
                     "nama" => $dataayamjago->nama,
-                    "ttl" => $dataayamjago->ttl,
+                    "tgl_lahir" => $dataayamjago->tgl_lahir,
                     "weton" => $dataayamjago->weton,
                     "usia" => $dataayamjago->usia,
                     "jenis_latihan" => $dataayamjago->jenis_latihan,

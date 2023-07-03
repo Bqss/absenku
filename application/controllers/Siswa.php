@@ -88,7 +88,7 @@ class Siswa extends CI_Controller
         'alamat' => $row->alamat,
         'jk' => $row->jk,
         'tempat_lahir' => $row->tempat_lahir,
-        'pasaran' => $row->pasaran,
+        'weton' => $row->weton,
         'tgl_lahir' => $row->tgl_lahir,
         'user' => $user,
         'users'  => $this->ion_auth->user()->row(),
@@ -152,7 +152,7 @@ class Siswa extends CI_Controller
       'alamat' => $this->input->post('alamat'),
       'tempat_lahir' => $this->input->post('tempat_lahir'),
       'tgl_lahir' => $this->input->post('tanggal_lahir'),
-      'pasaran' => $this->input->post('pasaran'),
+      'weton' => $this->input->post('weton'),
 
     );
     // dd($data);
@@ -193,7 +193,7 @@ class Siswa extends CI_Controller
         // 'kelas' => $row->kelas,
         'jk' => $row->jk,
         'tempat_lahir' => $row->tempat_lahir,
-        'pasaran' => $row->pasaran,
+        'weton' => $row->weton,
         'tgl_lahir' => $row->tgl_lahir,
         'user' => $user, 'users'     => $this->ion_auth->user()->row(),
       );
@@ -238,7 +238,7 @@ class Siswa extends CI_Controller
         'alamat' => set_value('alamat', $row->alamat),
         'tempat_lahir' => set_value('tempat_lahir', $row->tempat_lahir),
         'tgl_lahir' => set_value('tgl_lahir', $row->tgl_lahir),
-        'pasaran' => set_value('pasaran', $row->pasaran),
+        'weton' => set_value('weton', $row->weton),
         'user' => $user,
         'users'     => $this->ion_auth->user()->row(),
 
@@ -268,7 +268,7 @@ class Siswa extends CI_Controller
       'alamat' => $this->input->post('alamat'),
       'tempat_lahir' => $this->input->post('tempat_lahir'),
       'tgl_lahir' => $this->input->post('tgl_lahir'),
-      'pasaran' => $this->input->post('pasaran'),
+      'weton' => $this->input->post('weton'),
     );
 
     // dd($data);

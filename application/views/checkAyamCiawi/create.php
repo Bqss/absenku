@@ -21,7 +21,7 @@
                             </div>
                             <div class="flex gap-4 items-center">
                                 <label for="ttl" class="basis-20 sm:basis-28">TTL</label>
-                                <input type="text" value="<?= $ayamJago["ttl"]; ?>" name="ttl" class="flex-1 px-5 py-2 rounded-lg border border-gray-400" id="ttl">
+                                <input type="text" value="<?= $ayamJago["tgl_lahir"]; ?>" name="ttl" class="flex-1 px-5 py-2 rounded-lg border border-gray-400" id="ttl">
                             </div>
                             <div class="flex gap-4 items-center">
                                 <label for="ttl" class="basis-20 sm:basis-28">Weton</label>

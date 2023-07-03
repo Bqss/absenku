@@ -62,7 +62,7 @@
                                 <th class="all">Rayon</th>
                                 <th class="all">Nama Siswa</th>
                                 <th class="desktop">TTL</th>
-                                <th class="desktop">Pasaran</th>
+                                <th class="desktop">Weton</th>
                                 <th class="desktop">Aksi</th>
                             </tr>
                         </thead>
