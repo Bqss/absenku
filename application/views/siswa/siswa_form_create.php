@@ -104,9 +104,9 @@
               <div class="help-block with-errors"></div>
             </div>
             <div class="form-group">
-              <label for="pasaran" class="control-label">Pasaran</label>
+              <label for="weton" class="control-label">Weton</label>
               <div class="input-group">
-                <input type="text" class="form-control" name="pasaran" id="pasaran"  placeholder="Pasaran"  />
+                <input type="text" class="form-control" name="weton" id="weton"  placeholder="Weton"  />
                 <span class="input-group-addon">
                   <span class="glyphicon glyphicon-user"></span>
                 </span>

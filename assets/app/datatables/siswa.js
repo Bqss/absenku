@@ -36,7 +36,7 @@ $(document).ready(function () {
         { data: "rayon" },
         { data: "nama" },
         { data: "tempat_lahir" },
-        { data: "pasaran" },
+        { data: "weton" },
         { data: null },
       ],
       columnDefs: [
@@ -48,7 +48,6 @@ $(document).ready(function () {
           orderable: false,
           searchable: false,
           render: function (data, type, row, meta) {
-
             let btn;
             if (checkLogin == 0) {
               return `<a href="${base_url}siswa/detail/${data.nis}" title="lihat" class="btn btn-md btn-success btn3d btn-view-data">

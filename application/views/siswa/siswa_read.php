@@ -39,7 +39,7 @@
                         </tr>
                         <tr>
                             <td>Neton</td>
-                            <td><?php echo $pasaran; ?></td>
+                            <td><?php echo $weton; ?></td>
                         </tr>
                         <tr>
                             <td>Agama</td>

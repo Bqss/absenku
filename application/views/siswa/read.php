@@ -36,8 +36,8 @@
                             <td><?php echo $tempat_lahir; ?></td>
                         </tr>
                         <tr>
-                            <td>Neton</td>
-                            <td><?php echo $pasaran; ?></td>
+                            <td>Weton</td>
+                            <td><?php echo $weton; ?></td>
                         </tr>
                         <tr>
                             <td>Agama</td>
