@@ -4,7 +4,7 @@
         <div class='col-xs-12'>
             <div class="box box-success">
                 <div class='box-header with-border'>
-                    <h3 class='box-title'>Data Ayam Jago</h3>
+                    <h3 class='box-title'>Data Ayam Ciawi</h3>
                 </div>
                 <div class="box-body">
                     <table class="table table-bordered">
@@ -17,7 +17,7 @@
                             <td><?php echo $ayamJago->nama; ?></td>
                         </tr>
                         <tr>
-                            <td>Id_ayam_jago</td>
+                            <td>Id_ayam_ciawi</td>
                             <td><?php echo $ayamJago->id_ayam_jago; ?></td>
                         </tr>
                         
@@ -38,7 +38,7 @@
                             <td><?php echo $ayamJago->jenis_latihan  ?></td>
                         </tr>
                         <tr>
-                            <td colspan="2" style="text-align:center;"><a href="<?php echo site_url('ayamjago') ?>" class="btn-xs btn btn-primary">Kembali</a></td>
+                            <td colspan="2" style="text-align:center;"><a href="<?php echo site_url('ayamCiawi') ?>" class="btn-xs btn btn-primary">Kembali</a></td>
                         </tr>
                     </table>
                 </div><!-- /.box-body -->

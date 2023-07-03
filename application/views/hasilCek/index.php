@@ -33,10 +33,7 @@
         <div class='col-xs-12'>
             <div class='box box-primary'>
                 <div class='box-header  with-border'>
-                    <h3 class='box-title'>DATA AYAM JAGO</h3>
-                    <div class="pull-right">
-                        <?php echo anchor(site_url('ayamjago/create'), ' <i class="fa fa-plus"></i> &nbsp;&nbsp; Tambah Baru', ' class="btn btn-primary btn-lg btn-create-data btn3d" '); ?>
-                    </div>
+                    <h3 class='box-title'>DATA HASIL CEK AYAM CIAWI</h3>
                 </div>
                 <div class="box-body">
                     <div class="actionPart">
@@ -57,7 +54,7 @@
                             <tr>
                                 <th class="all">No.</th>
                                 <th class="all">Id_check</th>
-                                <th class="all">id_ayam_jago</th>
+                                <th class="all">id_ayam_ciawi</th>
                                 <th class="all">keterangan</th>
                                 <th class="all">alasan</th>
                                 <th class="desktop">created_at</th>

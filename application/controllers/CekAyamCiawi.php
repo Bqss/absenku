@@ -1,6 +1,6 @@
 <?php 
 
-    class CekAyamJago extends CI_Controller{
+    class CekAyamCiawi extends CI_Controller{
 
         public function __construct () {
             parent::__construct();
@@ -33,22 +33,27 @@
             $data = [
                 "user" => $this->user,
             ];
-            $this->template->load('template/template', 'checkAyamJago/index', $data);
+            $this->template->load('template/template', 'checkAyamCiawi/index', $data);
         }
     
         public function check() {
             $id_ayam_jago = $this->input->post("id_ayam_jago");
             if(!$this->hasilCekAyam->checkIsExist($id_ayam_jago)){
-                return redirect(site_url('cekayamjago/create/'.$id_ayam_jago));
+                return redirect(site_url('cekAyamCiawi/create/'.$id_ayam_jago));
             }
             $this->session->set_flashdata('messageAlert', $this->messageAlert('success', 'berhasil cek'));
-            return redirect('/cekayamjago');
+            return redirect('/cekAyamCiawi');
 
         }
     
         public function create($id_ayam_jago){
             
-            $dataayamjago  = $this -> ayamJago-> getById($id_ayam_jago)[0];
+            $dataayamjago  = $this -> ayamJago-> getById($id_ayam_jago);
+            if(count($dataayamjago) == 0){
+                $this->session->set_flashdata('messageAlert', $this->messageAlert('error', 'id salah'));
+                return redirect('/cekAyamCiawi');
+            }
+            $dataayamjago = $dataayamjago[0];
             $data = [
                 "user" => $this->user,
                 "ayamJago" => [
@@ -62,7 +67,7 @@
                 ],
             ];
 
-            $this->template->load('template/template', 'checkAyamJago/create',$data);
+            $this->template->load('template/template', 'checkAyamCiawi/create',$data);
         }
 
         public function handleCreate(){
@@ -76,7 +81,7 @@
                 "alasan" => $alasan,
             ]);
 
-            $this->session->set_flashData('success', $this->messageAlert('success',"berhasil membuat penilaian"));
-            return redirect("/cekayamjago");
+            $this->session->set_flashData('messageAlert', $this->messageAlert('success',"berhasil membuat penilaian"));
+            return redirect("/cekAyamCiawi");
         }
     }

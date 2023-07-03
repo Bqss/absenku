@@ -25,7 +25,7 @@ $(document).ready(function () {
       ],
       order: [[0, "asc"]],
       ajax: {
-        url: base_url + "ayamjago/data",
+        url: base_url + "ayamCiawi/data",
         type: "POST",
         dataSrc: "",
       },
@@ -50,18 +50,18 @@ $(document).ready(function () {
           render: function (data, type, row, meta) {
             let btn;
             if (checkLogin == 0) {
-              return `<a href="${base_url}ayamJago/detail/${data.id_ayam_jago}" title="lihat" class="btn btn-md btn-success btn3d btn-view-data">
+              return `<a href="${base_url}ayamCiawi/detail/${data.id_ayam_jago}" title="lihat" class="btn btn-md btn-success btn3d btn-view-data">
                         <i class="fa fa-eye"></i> Lihat
                         </a>`;
             } else {
               return `  
-                        <a href="${base_url}ayamJago/detail/${data.id_ayam_jago}" title="lihat" class="btn btn-md btn-success btn3d btn-view-data">
+                        <a href="${base_url}ayamCiawi/detail/${data.id_ayam_jago}" title="lihat" class="btn btn-md btn-success btn3d btn-view-data">
                             <i class="fa fa-eye"></i> Lihat
                         </a>
-                        <a href="${base_url}ayamJago/update/${data.id_ayam_jago}" title="edit" class="btn btn-md btn-primary btn3d btn-view-data">
+                        <a href="${base_url}ayamCiawi/update/${data.id_ayam_jago}" title="edit" class="btn btn-md btn-primary btn3d btn-view-data">
                             <i class="fa fa-pen"></i> Edit
                         </a>
-                        <a href="${base_url}ayamJago/delete/${data.id_ayam_jago}" title="delete" class="btn btn-md btn-danger btn3d btn-view-data">
+                        <a href="${base_url}ayamCiawi/delete/${data.id_ayam_jago}" title="delete" class="btn btn-md btn-danger btn3d btn-view-data">
                             <i class="fa fa-trash"></i>Delete
                         </a>
                         `;
@@ -80,14 +80,14 @@ $(document).ready(function () {
         },
         {
           extend: "excel",
-          title: "Data Ayam Jago",
+          title: "Data Ayam Ciawi",
           exportOptions: {
             columns: [0, 1, 2, 3, 4, 5, 6],
           },
         },
         {
           extend: "copy",
-          title: "Data Ayam Jago",
+          title: "Data Ayam Ciawi",
           exportOptions: {
             columns: [0, 1, 2, 3, 4, 5, 6],
           },
@@ -96,7 +96,7 @@ $(document).ready(function () {
           extend: "pdf",
           oriented: "portrait",
           pageSize: "legal",
-          title: "Data Ayam Jago",
+          title: "Data Ayam Ciawi",
           download: "open",
           exportOptions: {
             columns: [0, 1, 2, 3, 4, 5, 6],
@@ -115,7 +115,7 @@ $(document).ready(function () {
           extend: "print",
           oriented: "portrait",
           pageSize: "A4",
-          title: "Data Ayam Jago",
+          title: "Data Ayam Ciawi",
           exportOptions: {
             columns: [0, 1, 2, 3, 4, 5, 6],
           },
