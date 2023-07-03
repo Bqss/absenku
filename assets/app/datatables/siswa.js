@@ -36,7 +36,7 @@ $(document).ready(function () {
         { data: "rayon" },
         { data: "nama" },
         { data: "tempat_lahir" },
-        { data: "weton" },
+        { data: "weton"},
         { data: null },
       ],
       columnDefs: [

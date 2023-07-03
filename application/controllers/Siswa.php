@@ -52,7 +52,7 @@ class Siswa extends CI_Controller
     $siswa = $this->Siswa_model->get_all_query();
     $data = array(
       'siswa_data' => $siswa,
-      'user' => $user,
+      'user' => $user,                      
       'users'     => $this->ion_auth->user()->row(),
       'result' => $hasil,
     );
